@@ -158,7 +158,8 @@ public class WebDownloader {
             sc.nextLine();
             for(Thread th:ths){
             	System.out.println("Ha pulsado ENTER");
-                th.interrupt();                
+				System.out.println("ARREAAA");
+				th.interrupt();
             }
         }).start();;
 
