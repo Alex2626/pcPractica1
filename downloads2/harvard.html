@@ -1,0 +1,1073 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js ie-8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="2no-js no-jss" dir="ltr" lang="en" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+ <!--<![endif]-->
+ <head> 
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TK7H6Z');</script> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="MobileOptimized" content="320"> 
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> 
+  <link rel="shortcut icon" type="image/ico" href="/sites/all/themes/hedu2015/assets/img/favicon.ico"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <link rel="apple-touch-icon-precomposed" href="/sites/all/themes/hedu2015/assets/img/apple-touch-icon-144x144.png"> 
+  <meta name="msapplication-TileImage" content="/sites/all/themes/hedu2015/assets/img/apple-touch-icon-144x144.png"> 
+  <meta name="msapplication-TileColor" content="#222222"> 
+  <title>Harvard University</title> 
+  <meta name="robots" content="index,follow,NOODP"> 
+  <meta name="description" Content="Harvard University is devoted to excellence in teaching, learning, and research, and to developing leaders in many disciplines who make a difference globally. Harvard University is made up of 11 principal academic units."> 
+  <meta name="keywords" Content="Harvard University, College, Education, Innovation, Teaching, Learning"> 
+  <meta property="fb:admins" content="593072576,599799799,662979311,613602264"> 
+  <meta property="fb:page_id" content="105930651606"> 
+  <meta property="fb:app_id" content="135898969862440"> 
+  <meta property="twitter:account_id" content="1491443782"> 
+  <meta name="twitter:site" content="@harvard"> 
+  <meta name="twitter:creator" content="@harvard"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta property="og:site_name" content="Harvard University"> 
+  <meta property="og:type" content="university"> 
+  <meta property="og:title" content="Harvard University"> 
+  <meta property="og:url" content="http://www.harvard.edu/"> 
+  <meta property="og:description" content="Harvard University is devoted to excellence in teaching, learning, and research, and to developing leaders in many disciplines who make a difference globally. Harvard University is made up of 11 principal academic units."> 
+  <meta property="og:image" content="http://www.harvard.edu/sites/default/files/default_images/harvard-social1200.jpg"> 
+  <link rel="stylesheet" href="/sites/all/themes/hedu2015/assets/css/harvard.min.css?v=20161206a"> 
+  <link href="/sites/all/themes/hedu2015/assets/css/print.css" rel="stylesheet" media="print" type="text/css"> 
+  <script async="true">
+      var fontCSS = '/sites/all/themes/hedu2015/assets/css/fonts.min.css';
+
+      (function() {
+        var wf = document.createElement('link');
+        wf.href = fontCSS;
+        wf.rel = 'stylesheet';
+
+        var s = document.getElementsByTagName('link')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script> 
+  <noscript> 
+   <link href="/sites/all/themes/hedu2015/assets/css/fonts.min.css" rel="stylesheet"> 
+  </noscript> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <link href="/sites/all/themes/hedu2015/assets/css/ie.min.css" rel="stylesheet">
+    <![endif]--> 
+ </head> 
+ <body id="body" class="homepage"> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK7H6Z" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <div id="page" class="page"> 
+   <ul class="jump-links"> 
+    <li> <a href="#mainArea" id="jumpToMain"> Jump to main content </a> </li> 
+    <li> <a href="#searchArea" id="jumpToSearch"> Jump to search </a> </li> 
+    <li> <a href="#footerArea"> Jump to the footer </a> </li> 
+   </ul> 
+   <header role="banner" id="headerArea" class="header-base "> 
+    <h1 class="harvard-heading"> <a href="/" class="harvard-heading__link"> <span class="is-visually-hidden"> Harvard University </span> </a> </h1> 
+    <a href="#siteNavigation" class="btn--menu" id="btn_menu" data-state="off" data-id="nav" aria-label="Reveal Navigation"> <span class="btn--menu__icon"></span> Menu </a> 
+    <nav role="navigation" class="main-nav" id="siteNavigation"> 
+     <div class="nav-drawer"> 
+      <div class="nav-group nav-group--consistent"> 
+       <ul class="clearfix"> 
+        <li class="nav-left-half"> 
+         <ul role="presentation" class="clearfix"> 
+          <li class="has-drop-nav"> <a href="/about-harvard" class=""> About <span class="lg-nav-txt"> Harvard </span> </a> 
+           <ul class="list--drop-nav"> 
+            <li class="first"><a href="/about-harvard/harvard-glance" class="first">Harvard at a Glance</a></li> 
+            <li class=""><a href="/president" class="">Harvard's President</a></li> 
+            <li class=""><a href="/about-harvard/harvards-president-leadership" class="">Harvard's Leadership</a></li> 
+            <li class=""><a href="/about-harvard/academic-experience" class="">Academic Experience</a></li> 
+            <li class=""><a href="/about-harvard/administrative-offices" class="">Administrative Offices</a></li> 
+            <li class=""><a href="/about-harvard/directories" class="">Directories</a></li> 
+            <li class=""><a href="http://community.harvard.edu/" class="">Harvard in the Community</a></li> 
+            <li class=""><a href="http://news.harvard.edu/gazette/" class="">News</a></li> 
+           </ul> </li> 
+          <li class="has-drop-nav"> <a href="/admissions-aid"> Admissions <span class="lg-nav-txt"> &amp; Aid </span> </a> 
+           <ul class="list--drop-nav"> 
+            <li class="first"><a href="/admissions-aid#titletop" class="first">Undergraduate</a></li> 
+            <li class=""><a href="/admissions-aid#grad" class="">Graduate &amp; Professional Schools</a></li> 
+            <li class=""><a href="/admissions-aid#continue" class="">Continuing Education</a></li> 
+            <li class="last"><a href="/admissions-aid#summer" class="last">Summer Programs</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="nav-right-half"> 
+         <ul role="presentation" class="clearfix"> 
+          <li class="has-drop-nav"> <a href="/schools"> Schools </a> 
+           <ul class="list--drop-nav"> 
+            <li class="first"><a href="http://www.hbs.edu/" class="first">Business</a></li> 
+            <li class=""><a href="http://college.harvard.edu" class="">College</a></li> 
+            <li class=""><a href="http://www.dce.harvard.edu/" class="">Continuing Education</a></li> 
+            <li class=""><a href="http://www.hsdm.harvard.edu/" class="">Dental</a></li> 
+            <li class=""><a href="http://www.gsd.harvard.edu/" class="">Design</a></li> 
+            <li class=""><a href="http://www.hds.harvard.edu/" class="">Divinity</a></li> 
+            <li class=""><a href="http://www.gse.harvard.edu/" class="">Education</a></li> 
+            <li class=""><a href="http://seas.harvard.edu/" class="">Engineering</a></li> 
+            <li class=""><a href="http://www.fas.harvard.edu/" class="">Faculty of Arts &amp; Sciences</a></li> 
+            <li class=""><a href="http://www.hks.harvard.edu/" class="">Government</a></li> 
+            <li class=""><a href="http://www.gsas.harvard.edu/" class="">Graduate School</a></li> 
+            <li class=""><a href="http://www.law.harvard.edu/index.html" class="">Law</a></li> 
+            <li class=""><a href="http://hms.harvard.edu/" class="">Medical</a></li> 
+            <li class=""><a href="http://www.hsph.harvard.edu/" class="">Public Health</a></li> 
+            <li class="last"><a href="http://www.radcliffe.edu/" class="last">Radcliffe Institute</a></li> 
+           </ul> </li> 
+          <li class="has-drop-nav"> <a href="/on-campus"> On Campus </a> 
+           <ul class="list--drop-nav"> 
+            <li class="first"><a href="/on-campus/arts-and-humanities" class="first">Arts and Humanities</a></li> 
+            <li class=""><a href="http://www.gocrimson.com/" class="">Athletics</a></li> 
+            <li class=""><a href="/on-campus/commencement" class="">Commencement</a></li> 
+            <li class=""><a href="http://hr.harvard.edu/jobs/" class="">Employment</a></li> 
+            <li class=""><a href="/events" class="">Events</a></li> 
+            <li class=""><a href="http://harvardx.harvard.edu/" class="">HarvardX</a></li> 
+            <li class=""><a href="http://library.harvard.edu/" class="">Library</a></li> 
+            <li class=""><a href="/on-campus/museums" class="">Museums</a></li> 
+            <li class=""><a href="/on-campus/research" class="">Research</a></li> 
+            <li class="last"><a href="/on-campus/visit-harvard" class="last">Visit Harvard</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> 
+      </div> 
+      <div class="nav-group nav-group--callouts"> 
+       <ul class="clearfix"> 
+        <li class="nav-left-half"> 
+         <ul role="presentation" class="clearfix"> 
+          <li> <a href="http://news.harvard.edu/gazette/"> Gazette News </a> </li> 
+          <li> <a href="/events"> Events </a> </li> 
+         </ul> </li> 
+        <li class="nav-right-half"> 
+         <ul role="presentation" class="clearfix"> 
+          <li> <a href="http://campaign.harvard.edu/" class=""> Harvard Campaign </a> </li> 
+          <li> <a href="http://alumni.harvard.edu/givenow"> Give </a> </li> 
+         </ul> </li> 
+       </ul> 
+      </div> 
+      <div class="list-clean"> 
+       <ul class="nav-group nav-group--top-bar"> 
+        <li class="first"><a href="/faculty" class="first">Faculty</a></li> 
+        <li class=""><a href="/staff" class="">Staff</a></li> 
+        <li class=""><a href="/students" class="">Students</a></li> 
+        <li class=""><a href="http://alumni.harvard.edu" class="">Alumni</a></li> 
+        <li class=""><a href="/parents" class="">Parents</a></li> 
+        <li class=""><a href="/on-campus/visit-harvard" class="">Visitors</a></li> 
+        <li class="last"><a href="/media-relations" class="last">Media</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </nav> 
+    <form role="search" id="searchArea" class="search-area" method="get" action="/searches/"> 
+     <label for="siteSearch"> <span class="is-visually-hidden"> Search: </span> </label> 
+     <input type="search" name="searchtext" id="searchSite" class="input-search" aria-label="search" placeholder="What can we help you find?"> 
+     <button type="button" class="btn--mobile-site-search"> <span class="is-visually-hidden"> Open Search </span> </button> 
+    </form> 
+   </header> 
+   <main role="main" id="mainArea" class="main-base"> 
+    <div class="view view-annoucement view-id-annoucement view-display-id-block_for_homepage view-dom-id-5bd2a9b4edf87381e4e5cfa4c2331af3"> 
+    </div> 
+    <section class="stitle-home-primary-feature c-bg-crimson c-txt-white card card-callout-bg-img" data-moduletitle="home-primary-feature"> 
+     <div class="wrapper wrapper--no-pad card card--nid-2931526 clearfix" style="background: url('http://www.harvard.edu/sites/default/files/feature_item_media/112216_GORDON_REED_224_362167-full.jpg') no-repeat center center; background-size: cover;"> 
+      <div class="card-callout-bg-img__content txt-center float-right"> 
+       <h2 class="txt-h1-alt"> <a href="http://news.harvard.edu/gazette/story/2017/05/pulitzer-prize-winner-annette-gordon-reed-reflects-on-her-personal-history/">Annette Gordon-Reed’s personal history, from East Texas to Monticello</a> </h2> 
+       <p class="txt-h6"> </p> 
+       <div> 
+        <p>‘You can’t let your emotions overtake you so much that you can’t do the work’</p> 
+       </div> 
+       <a href="http://news.harvard.edu/gazette/story/2017/05/pulitzer-prize-winner-annette-gordon-reed-reflects-on-her-personal-history/" class="btn btn--reverse"> Read story </a> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="stitle-home-secondary-feature c-bg-white c-txt-dark padding-sm" data-moduletitle="home-secondary-feature"> 
+     <div class="wrapper"> 
+      <div class="grid grid--3 grid--3a"> 
+       <div class="w-33 w-100--m"> 
+        <div class="card card--nid-2931531 card--gazette gz_art c-txt-dark card--media-top "> 
+         <div class="card__media card__media--img"> 
+          <a href="http://news.harvard.edu/gazette/story/2017/05/a-celebration-of-harvard-artists-showcased-the-campus-arts/"> <img src="http://www.harvard.edu/sites/default/files/feature_item_media/042817_H_ARTISTS_351_368493-st.jpg" alt="Man on stage raising his hand, audience is also raising their hands" class="img-sm"> <img src="http://www.harvard.edu/sites/default/files/feature_item_media/042817_H_ARTISTS_351_368493-w.jpg" alt="Man on stage raising his hand, audience is also raising their hands" class="img-lg"> </a> 
+         </div> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Gazette</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <h3 class="card__title"> <a href="http://news.harvard.edu/gazette/story/2017/05/a-celebration-of-harvard-artists-showcased-the-campus-arts/">Star turn for Harvard arts</a> </h3> 
+           <p class="txt-h6"> </p> 
+           <div class="card__text"> 
+            <p>Matt Damon, Diane Paulus, Courtney B. Vance lead celebration of campus creativity</p> 
+           </div> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-1"> 
+            <a href="http://news.harvard.edu/gazette/story/2017/05/a-celebration-of-harvard-artists-showcased-the-campus-arts/" class=""> Read story </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-33 w-50--m"> 
+        <div class="card card--nid-2931371 card--gazette gz_science c-txt-dark card--media-top "> 
+         <div class="card__media card__media--img"> 
+          <a href="http://news.harvard.edu/gazette/story/2017/04/study-finds-people-equate-immorality-with-impossibility/"> <img src="http://www.harvard.edu/sites/default/files/feature_item_media/042017_PHILLIPS_061_367823-st.jpg" alt="Jonathan Phillips in front of a window with equations written on it" class="img-sm"> <img src="http://www.harvard.edu/sites/default/files/feature_item_media/042017_PHILLIPS_061_367823-w.jpg" alt="Jonathan Phillips in front of a window with equations written on it" class="img-lg"> </a> 
+         </div> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Gazette</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <h3 class="card__title"> <a href="http://news.harvard.edu/gazette/story/2017/04/study-finds-people-equate-immorality-with-impossibility/">Me, steal? Impossible</a> </h3> 
+           <p class="txt-h6"> </p> 
+           <div class="card__text"> 
+            <p>Researchers uncover twist in moral imagination</p> 
+           </div> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-1"> 
+            <a href="http://news.harvard.edu/gazette/story/2017/04/study-finds-people-equate-immorality-with-impossibility/" class=""> Read story </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-33 w-50--m"> 
+        <div class="card card--nid-2931366 card--gazette gz_campus c-txt-dark card--media-top "> 
+         <div class="card__media card__media--img"> 
+          <a href="http://news.harvard.edu/gazette/story/2017/05/instagram-takeover-highlights-the-arts-at-harvard/"> <img src="http://www.harvard.edu/sites/default/files/feature_item_media/042117_FISCH_OPPENHEIM_1319_367861-st.jpg" alt="Samuel Fisch ’20 and Lance Oppenheim ’19" class="img-sm"> <img src="http://www.harvard.edu/sites/default/files/feature_item_media/042117_FISCH_OPPENHEIM_1319_367861-w.jpg" alt="Samuel Fisch ’20 and Lance Oppenheim ’19" class="img-lg"> </a> 
+         </div> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Gazette</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <h3 class="card__title"> <a href="http://news.harvard.edu/gazette/story/2017/05/instagram-takeover-highlights-the-arts-at-harvard/">Instagram takeover highlights the arts at Harvard</a> </h3> 
+           <p class="txt-h6"> </p> 
+           <div class="card__text"> 
+            <p>Samuel Fisch ’20 and Lance Oppenheim ’19 capture Arts First and the student experience of the arts on campus</p> 
+           </div> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-1"> 
+            <a href="http://news.harvard.edu/gazette/story/2017/05/instagram-takeover-highlights-the-arts-at-harvard/" class=""> Read story </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="stitle-home-events-feed c-bg-blue-dark c-txt-white padding-sm" data-moduletitle="home-events-feed"> 
+     <header> 
+      <h2 class="txt-h1-alt txt-center  c-txt-white">Events</h2> 
+     </header> 
+     <div class="wrapper"> 
+      <div class="grid grid--4a"> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card card--event card--homepage-grid c-txt-dark"> 
+           <div class="card__media"> 
+            <a href="http://semiticmuseum.fas.harvard.edu/event/facing-philistines-discovery-iron-age-cemetery"><img src="http://www.trumba.com/i/DgBWk1jK8EMYA8z17VVXc%2AoN.jpg" alt=""></a> 
+           </div> 
+           <div class="card--event__content content-area"> 
+            <div class="event-mdt txt-center txt-uppercase"> 
+             <p class="card--event__time"> Wednesday, May 3, 2017, 6:00pm - 7:30pm </p> 
+            </div> 
+            <h3 class="txt-h4"><a href="http://semiticmuseum.fas.harvard.edu/event/facing-philistines-discovery-iron-age-cemetery" class="card--event__link">Facing Philistines: The Discovery of an Iron Age Cemetery</a></h3> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card card--event card--homepage-grid c-txt-dark"> 
+           <div class="card__media"> 
+            <a href="https://www.eventbrite.com/e/cris-laurent-gaude-a-play-about-wwi-tickets-33892700981"><img src="http://www.trumba.com/i/DgBR-vGBz7MpTB9t5lWePjcv.jpg" alt=""></a> 
+           </div> 
+           <div class="card--event__content content-area"> 
+            <div class="event-mdt txt-center txt-uppercase"> 
+             <p class="card--event__time"> Wednesday, May 3, 2017, 7:00pm - 8:30pm </p> 
+            </div> 
+            <h3 class="txt-h4"><a href="https://www.eventbrite.com/e/cris-laurent-gaude-a-play-about-wwi-tickets-33892700981" class="card--event__link">Cris (A War Tragedy - in French w/ English supertitles)</a></h3> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card card--event card--homepage-grid c-txt-dark"> 
+           <div class="card__media"> 
+            <a href="http://complit.fas.harvard.edu/event/svetlana-boym-memorial-talk-series-andreas-huyssen?delta=0"><img src="http://www.trumba.com/i/DgDlcotjoL6qPojplIQvOIrw.jpg" alt=""></a> 
+           </div> 
+           <div class="card--event__content content-area"> 
+            <div class="event-mdt txt-center txt-uppercase"> 
+             <p class="card--event__time"> Thursday, May 4, 2017, 4:00pm - 5:00pm </p> 
+            </div> 
+            <h3 class="txt-h4"><a href="http://complit.fas.harvard.edu/event/svetlana-boym-memorial-talk-series-andreas-huyssen?delta=0" class="card--event__link">Svetlana Boym: Exile and Imagination</a></h3> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card card--event card--homepage-grid c-txt-dark"> 
+           <div class="card__media"> 
+            <a href="https://www.peabody.harvard.edu/curiouser-and-curiouser"><img src="http://www.trumba.com/i/DgC2hvYCQk7PJIjNOhBo1TWu.jpg" alt=""></a> 
+           </div> 
+           <div class="card--event__content content-area"> 
+            <div class="event-mdt txt-center txt-uppercase"> 
+             <p class="card--event__time"> Thursday, May 4, 2017, 6:00pm - 7:30pm </p> 
+            </div> 
+            <h3 class="txt-h4"><a href="https://www.peabody.harvard.edu/curiouser-and-curiouser" class="card--event__link">Curiouser and Curiouser: Why Twenty-First-Century Wonderlands Need Anthropology Museums More Than Ever</a></h3> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="txt-center deck__cta-area"> 
+       <a href="/events" class="btn btn--reverse"> See more events </a> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="stitle-home-multimedia-feature c-bg-white c-txt-dark padding-sm" data-moduletitle="home-multimedia-feature"> 
+     <header> 
+      <h2 class="txt-h1-alt txt-center ">Video</h2> 
+     </header> 
+     <div class="wrapper"> 
+      <div class="grid grid--3 grid--3b-mirror"> 
+       <div class="w-66"> 
+        <div class="card card--nid-2823256 card--youtube c-txt-dark card--media-top "> 
+         <div class="card__media"> 
+          <div class="embed-container  card--16-9"> 
+           <iframe src="https://www.youtube.com/embed/6En3ToxHWiA?modestbranding=1&amp;title=&amp;autohide=1&amp;wmode=opaque&amp;rel=0&amp;enablejsapi=1" frameborder="0" allowfullscreen></iframe> 
+          </div> 
+         </div> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Youtube</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <h3 class="card__title"> New Jersey student uprooted by Hurricane Sandy makes the most of his opportunity at Harvard </h3> 
+           <p class="txt-h6"> </p> 
+           <div class="card__text"> 
+            <p>When Michael Wingate earned his diploma as valedictorian of his high school class, he didn’t have a wall to hang it on. Hurricane Sandy had destroyed the Union Beach, N.J., house where he lived with his mother and siblings.</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-33"> 
+        <div class="card card--nid-2319496 card--youtube c-txt-dark card--media-top "> 
+         <div class="card__media"> 
+          <div class="embed-container  card--16-9"> 
+           <iframe src="https://www.youtube.com/embed/WM-vZLTzx2E?modestbranding=1&amp;title=&amp;autohide=1&amp;wmode=opaque&amp;rel=0&amp;enablejsapi=1" frameborder="0" allowfullscreen></iframe> 
+          </div> 
+         </div> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Youtube</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <h3 class="card__title"> One potato, two potato: Contemporary work at Harvard Art Museums </h3> 
+           <p class="txt-h6"> </p> 
+           <div class="card__text"> 
+            <p>On view in the Harvard Art Museums is a clever work by the conceptual Argentine artist Victor Grippo. “Analgoia I" incorporates a series of potatoes connected to electrodes and a meter that registers the energy they produce. The piece is both an example of the artist's unusual use of everyday materials and a statement about how a united community could resist the nation’s repressive political regime.&nbsp;</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="txt-center deck__cta-area"> 
+       <a href="http://www.harvard.edu/about-harvard/multimedia" class="btn "> See more multimedia </a> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="rssfeed-module  stitle-home-news-feed-gazette c-bg-green-light c-txt-dark padding-sm" data-moduletitle="home-news-feed-gazette"> 
+     <header> 
+      <h2 class="txt-h1-alt txt-center ">Latest Harvard Gazette News</h2> 
+     </header> 
+     <div class="wrapper"> 
+      <div class="grid grid--4a"> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <div class="card__thumb"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/much-of-life-is-beyond-our-control-but-dining-smartly-can-help-us-live-healthier-longer/"> <img src="https://harvardgazette.files.wordpress.com/2017/04/2017_12_4_agingseries_1120x625px_diet1.jpg" alt="Much of life is beyond our control, but dining smartly can help us live healthier, longer"> </a> 
+             </div> 
+             <h3 class="card__title"> <a href="http://news.harvard.edu/gazette/story/2017/05/much-of-life-is-beyond-our-control-but-dining-smartly-can-help-us-live-healthier-longer/">Much of life is beyond our control, but dining smartly can help us live healthier, longer</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               Researchers at the Harvard T. H. Chan School of Public Health have been studying the role of a healthy diet in living longer and healthier. 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/much-of-life-is-beyond-our-control-but-dining-smartly-can-help-us-live-healthier-longer/"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <div class="card__thumb"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/5-awarded-harvard-college-professorships/"> <img src="https://harvardgazette.files.wordpress.com/2017/05/092513_jhs_141_140.jpg" alt="5 awarded Harvard College Professorships"> </a> 
+             </div> 
+             <h3 class="card__title"> <a href="http://news.harvard.edu/gazette/story/2017/05/5-awarded-harvard-college-professorships/">5 awarded Harvard College Professorships</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               The five faculty members named Harvard College Professors this month all share a talent for making their respective subjects come alive in the classroom. 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/5-awarded-harvard-college-professorships/"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <div class="card__thumb"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/in-annual-ritual-lowell-house-residents-rise-early-to-greet-may-day/"> <img src="https://harvardgazette.files.wordpress.com/2017/05/dsc_0032_140.jpg" alt="In annual ritual, Lowell House residents rise early to greet May Day"> </a> 
+             </div> 
+             <h3 class="card__title"> <a href="http://news.harvard.edu/gazette/story/2017/05/in-annual-ritual-lowell-house-residents-rise-early-to-greet-may-day/">In annual ritual, Lowell House residents rise early to greet May Day</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               In an annual ritual, Lowell House residents rise early to greet May Day by the river. 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/in-annual-ritual-lowell-house-residents-rise-early-to-greet-may-day/"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <div class="card__thumb"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/paul-c-martin-85/"> <img src="https://s0.wp.com/wp-content/themes/vip/gz-gazette20/a/i/HWPI_Avatar.jpg" alt="Paul C. Martin, 85"> </a> 
+             </div> 
+             <h3 class="card__title"> <a href="http://news.harvard.edu/gazette/story/2017/05/paul-c-martin-85/">Paul C. Martin, 85</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               At a Meeting of the Faculty of Arts and Sciences on May 2, 2017, the following Minute was placed upon the records. 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://news.harvard.edu/gazette/story/2017/05/paul-c-martin-85/"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="card--news-signup txt-center stitle-home-gazette-signup c-bg-dark c-txt-white padding-sm" data-moduletitle="home-gazette-signup"> 
+     <p class="card--news-signup__leadin wrapper wrapper--3-down"> Get the latest Harvard Gazette news delivered to your inbox. </p> 
+     <form class="content-area" id="newspaper_signup_form" action="http://www.pages01.net/harvard/gazette" method="get"> 
+      <div class="form-row display-inline-block"> 
+       <input type="email" id="newspaper_email" name="email" class="input-text input-reveal" placeholder="your_email@email.com"> 
+       <label for="newspaper_email" class="label-reveal"> Your Email: </label> 
+      </div> 
+      <div class="form-row display-inline-block"> 
+       <button type="submit" class="btn btn--min-width btn--reverse" id="newspaper_signup_btn"> Subscribe </button> 
+      </div> 
+     </form> 
+    </section> 
+    <section class="stitle-home-instagram-media-feed c-bg-crimson c-txt-white padding-sm instagram-items" data-moduletitle="home-instagram-media-feed"> 
+     <header> 
+      <h2 class="txt-h1-alt txt-center  c-txt-white">Harvard on Instagram</h2> 
+     </header> 
+     <div class="wrapper"> 
+      <div class="grid grid--4a"> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--instagram card--gallery"> 
+           <div class="card__content"> 
+            <div class="card__content__heading"> 
+             <span class="social-icon">Instagram</span> 
+            </div> 
+           </div> 
+           <ul class="list-clean card-gallery__list "> 
+            <li class=""> <a href="https://www.instagram.com/p/BTpQBaeFHio/"> <img src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18161760_236025630212537_5675126298943422464_n.jpg" alt="Instagram image"> </a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--instagram card--gallery"> 
+           <div class="card__content"> 
+            <div class="card__content__heading"> 
+             <span class="social-icon">Instagram</span> 
+            </div> 
+           </div> 
+           <ul class="list-clean card-gallery__list "> 
+            <li class=""> <a href="https://www.instagram.com/p/BTl9AAqlGHe/"> <img src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/e15/18251618_1860809474186738_503113542795264000_n.jpg" alt="Instagram image"> </a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--instagram card--gallery"> 
+           <div class="card__content"> 
+            <div class="card__content__heading"> 
+             <span class="social-icon">Instagram</span> 
+            </div> 
+           </div> 
+           <ul class="list-clean card-gallery__list "> 
+            <li class=""> <a href="https://www.instagram.com/p/BTkAO9XlfVp/"> <img src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18298324_476235106101932_5989214263707697152_n.jpg" alt="Instagram image"> </a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--instagram card--gallery"> 
+           <div class="card__content"> 
+            <div class="card__content__heading"> 
+             <span class="social-icon">Instagram</span> 
+            </div> 
+           </div> 
+           <ul class="list-clean card-gallery__list "> 
+            <li class=""> <a href="https://www.instagram.com/p/BTfTII2lm6g/"> <img src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/e15/18161121_215756085590596_1600734800845471744_n.jpg" alt="Instagram image"> </a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="stitle-home-social-media-feed c-bg-blue c-txt-white padding-sm social-items" data-moduletitle="home-social-media-feed"> 
+     <div class="wrapper wrapper--carousel"> 
+      <header> 
+       <h2 class="txt-h1-alt txt-center  c-txt-white">Harvard on Twitter</h2> 
+      </header> 
+      <div class="grid--3a carousel"> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Who is ready for a Twin Cities Your Harvard celebration? We certainly are! Save the date, Minnesota! <a href="http://hvrd.me/Xi0L30bkEMV">http://hvrd.me/Xi0L30bkEMV</a> <a href="http://twitter.com/search?q=%23MyHarvard">#MyHarvard</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/HarvardAlumni/status/859882889772716032" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> “Climate change is the ultimate global public good problem, and that certainly is a motivation for me.” <a href="http://hvrd.me/mFLo30bkHYQ">http://hvrd.me/mFLo30bkHYQ</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/Harvard/status/859875507416035330" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Damon, Paulus, Vance lead celebration of campus creativity: <a href="http://hvrd.me/icYq30boG5o">http://hvrd.me/icYq30boG5o</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/HarvardNews/status/859863940905525248" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Two Harvard College students take over Harvard's official <a href="http://twitter.com/instagram">@instagram</a> account to highlight the arts on campus <a href="http://hvrd.me/Vpju30boE5Q">http://hvrd.me/Vpju30boE5Q</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/Harvard/status/859848843420205059" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Misophonia: When sounds really do make you “crazy” <a href="http://hvrd.me/sJMf30b9u2u">http://hvrd.me/sJMf30b9u2u</a> via <a href="http://twitter.com/HarvardHealth">@HarvardHealth</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/HarvardAlumni/status/859843840617975812" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Official program of the March 3, 1913 Woman Suffrage Procession in Washington, DC <a href="http://twitter.com/SchlesingerLib">@SchlesingerLib</a> <a href="https://t.co/XBqtnWOD0P">https://t.co/XBqtnWOD0P</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/HarvardLibrary/status/859830320153100288" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Lorgia García Peña and David Cox have each won a 2017 Roslyn Abramson Award for excellence in undergraduate teaching <a href="http://hvrd.me/eLBH30boz9d">http://hvrd.me/eLBH30boz9d</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/Harvard/status/859826190634319873" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Pulitzer Prize winner <a href="http://twitter.com/agordonreed">@agordonreed</a> JD'84 reflects on her personal history <a href="http://hvrd.me/XjOt30bor1a">http://hvrd.me/XjOt30bor1a</a> <a href="https://t.co/I7lp99xIEn">https://t.co/I7lp99xIEn</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/HarvardAlumni/status/859822468533555201" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> Dan Byers has been named the new director of the Carpenter Center for the Visual Arts: <a href="http://hvrd.me/BZPv30boH2O">http://hvrd.me/BZPv30boH2O</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/HarvardNews/status/859818634440474624" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="content-area"> 
+        <div class="card c-txt-dark card--3a card--small card--twitter card--media-none txt-center"> 
+         <div class="card__content"> 
+          <div class="card__content__heading"> 
+           <span class="social-icon">Twitter</span> 
+          </div> 
+          <div class="card__content__source"> 
+           <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+           <p class="card__text txt-up-1"> South Asia: Migrations &amp;amp; Transformation Panel on Visual Art today at 3pm in Menschel Hall with <a href="http://twitter.com/HarvardSAI">@HarvardSAI</a>… <a href="https://twitter.com/i/web/status/859817264819974144">https://twitter.com/i/web/status/859817264819974144</a> </p> 
+          </div> 
+          <div class="card__outro"> 
+           <div class="card__outro__cta-btn"> 
+            <a href="http://twitter.com/Harvartmuseums/status/859817264819974144" class="btn"> View this Tweet </a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="txt-center deck__cta-area"> 
+       <a href="/about-harvard/social-media" class="btn btn--reverse"> Social media directory </a> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="rssfeed-module  stitle-home-news-feed-all c-bg-green-light c-txt-dark padding-sm" data-moduletitle="home-news-feed-all"> 
+     <header> 
+      <h2 class="txt-h1-alt txt-center ">News from Around Harvard</h2> 
+     </header> 
+     <div class="wrapper"> 
+      <div class="grid grid--4a"> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="https://hms.harvard.edu/news/4-hms-faculty-elected-national-academy-sciences">4 HMS Faculty Elected to National Academy of Sciences</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               Members honored for achievements in research 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="https://hms.harvard.edu/news/4-hms-faculty-elected-national-academy-sciences"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="http://niemanreports.org/articles/mining-the-data/">Mining the Data</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               On October 11, 2011, Florida Highway Patrol trooper Donna Jane Watts clocked a car driving down the Florida turnpike at 120 miles per hour, well over the zone’s 70 mph speed limit. … 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://niemanreports.org/articles/mining-the-data/"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="http://feedproxy.google.com/~r/hgse-news-all/~3/2BsGoZCRaTY/reaching-across-difference-deaweh-benson-iep17">Reaching Across Difference: Deaweh Benson, IEP'17</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               400x200-deaweh-benson.jpg Deaweh Benson first realized she was meant to be an educator when she traveled abroad to teach English in China. … 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://feedproxy.google.com/~r/hgse-news-all/~3/2BsGoZCRaTY/reaching-across-difference-deaweh-benson-iep17"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="http://www.hks.harvard.edu/news-events/news/students/empowering-women-through-research">Empowering Women Through Research</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               Empowering Women Through Research 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://www.hks.harvard.edu/news-events/news/students/empowering-women-through-research"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="grid grid--4a"> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="http://feedproxy.google.com/~r/hgse-news-all/~3/OfifVjzlrrE/2017-intellectual-contribution-award-winners-announced">2017 Intellectual Contribution Award Winners Announced</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               400x200-commencement-banner.png The HGSE Intellectual Contribution Award recognizes 13 students (one from each Ed.M. … 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://feedproxy.google.com/~r/hgse-news-all/~3/OfifVjzlrrE/2017-intellectual-contribution-award-winners-announced"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="https://hms.harvard.edu/news/dermatology-innovator">Dermatology Innovator</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               Rachael Clark installed as Shing-Yiu Yip and Cecilia M. Hepp associate professor 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="https://hms.harvard.edu/news/dermatology-innovator"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="w-50"> 
+        <div class="grid"> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="http://feedproxy.google.com/~r/hgse-news-all/~3/3r9Wp2bGJnc/harvard-edcast-boys-men">Harvard EdCast: Boys to Men</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               400x200-boys-to-men.jpg From an early age, boys are shown that they need to possess strength, toughness, stoicism, and other stereotypically "masculine" traits in … 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://feedproxy.google.com/~r/hgse-news-all/~3/3r9Wp2bGJnc/harvard-edcast-boys-men"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="w-50"> 
+          <div class="card c-txt-dark card--gazette"> 
+           <div class="card__content"> 
+            <div class="card__content__source"> 
+             <h3 class="card__title"> <a href="http://loeblog.gsd.harvard.edu/matthew-keifer-and-andrew-howard-at-bsa-foundation-fulfilling-the-promise-series-may-10/">Matthew Keifer and Andrew Howard at BSA Foundation Fulfilling the Promise Series–May 10</a> </h3> 
+             <p class="card__timestamp"> <time datetime="2017-05-03">May 3, 2017</time> </p> 
+             <div class="card__text">
+               Don’t miss Implementation, the final event in the Boston Society of Architects’ discussion series&nbsp;Fulfilling the Promise: Community Building and the Emerald Necklace, taking place next … 
+             </div> 
+            </div> 
+            <div class="card__outro"> 
+             <div class="card__outro__cta-2"> 
+              <a href="http://loeblog.gsd.harvard.edu/matthew-keifer-and-andrew-howard-at-bsa-foundation-fulfilling-the-promise-series-may-10/"> Read more </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </main> 
+   <footer role="contentinfo" id="footerArea" class="footer-base"> 
+    <div class="wrapper wrapper--1-down content-area"> 
+     <a href="#page" class="jump-to-nav jump-to-nav--hidden"> Jump to Top </a> 
+     <div class="grid grid--footer"> 
+      <div class="w-20 w-33--m"> 
+       <h1 class="footer__heading txt-h5"> Website </h1> 
+       <ul ul_attributes="nav-group nav-group--top-bar" display_stickynav="yes" class="list-clean">
+        <li class="menu-449 first"><a href="http://www.accessibility.harvard.edu/" title="Accessibility@0">Accessibility</a></li> 
+        <li class="menu-683 last"><a href="/sitemap" title="Sitemap@0">Sitemap</a></li> 
+       </ul> 
+      </div> 
+      <div class="w-20 w-33--m"> 
+       <h2 class="footer__heading txt-h5"> Get in Touch </h2> 
+       <ul ul_attributes="nav-group nav-group--top-bar" display_stickynav="yes" class="list-clean">
+        <li class="menu-660 first"><a href="/contact-harvard" title="Contact@2">Contact Harvard</a></li> 
+        <li class="menu-2078"><a href="/about-harvard/maps-directions" title="">Maps &amp; Directions</a></li> 
+        <li class="menu-2383"><a href="http://hr.harvard.edu/jobs" title="">Jobs</a></li> 
+        <li class="menu-2384 last"><a href="/about-harvard/social-media-and-newsletter-directory" title="">Social Media</a></li> 
+       </ul> 
+      </div> 
+      <div class="w-20 w-33--m"> 
+       <h3 class="footer__heading txt-h5"> Security &amp; Brand </h3> 
+       <ul ul_attributes="nav-group nav-group--top-bar" display_stickynav="yes" class="list-clean">
+        <li class="menu-448 first"><a href="/privacy-statement" title="Privacy@0">Privacy Statement</a></li> 
+        <li class="menu-447"><a href="/copyright-issue" title="Infringement@0">Report Copyright Infringement</a></li> 
+        <li class="menu-861"><a href="/security-issue" title="Report Security Issue">Report Security Issue</a></li> 
+        <li class="menu-446 last"><a href="http://trademark.harvard.edu/pages/trademark-notice" title="TrademarkNotice@0">Trademark Notice</a></li> 
+       </ul> 
+      </div> 
+      <div class="w-footer-last"> 
+       <h4 class="footer__heading txt-h5 is-visually-hidden"> Social Media &amp; other Application Links </h4> 
+       <ul class="list-social-links list-clean"> 
+        <li> <a href="http://facebook.com/harvard" class="social-link social-link--facebook"> <span class="is-visually-hidden"> Facebook </span> </a> </li> 
+        <li> <a href="http://twitter.com/harvard" class="social-link social-link--twitter"> <span class="is-visually-hidden"> Twitter </span> </a> </li> 
+        <li> <a href="http://www.instagram.com/harvard" class="social-link social-link--instagram"> <span class="is-visually-hidden"> Instagram </span> </a> </li> 
+        <li> <a href="http://youtube.com/harvard" class="social-link social-link--youtube"> <span class="is-visually-hidden"> YouTube </span> </a> </li> 
+        <li> <a href="https://soundcloud.com/harvard" class="social-link social-link--soundcloud"> <span class="is-visually-hidden"> SoundCloud </span> </a> </li> 
+        <li> <a href="http://plus.google.com/+harvard" class="social-link social-link--google-plus"> <span class="is-visually-hidden"> Google Plus </span> </a> </li> 
+        <li> <a href="https://www.linkedin.com/edu/school?id=18483" class="social-link social-link--linkedin"> <span class="is-visually-hidden"> LinkedIn </span> </a> </li> 
+        <li> <a href="http://www.harvard.edu/itunes" class="social-link social-link--itunes"> <span class="is-visually-hidden"> iTunes </span> </a> </li> 
+       </ul> 
+       <p class="w-60 other-apps"> <a href="/all-harvard-mobile"> Harvard Apps </a> </p> 
+      </div> 
+     </div> 
+     <p class="footer__outro"> © 2017 The President and Fellows of Harvard College </p> 
+    </div> 
+   </footer> 
+  </div> 
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script> 
+  <script src="/sites/all/themes/hedu2015/assets/js/script.js"></script> 
+  <script src="/sites/all/themes/hedu2015/assets/js-element-queries/ResizeSensor.js"></script> 
+  <script src="/sites/all/themes/hedu2015/assets/js-element-queries/ElementQueries.js"></script> 
+  <script src="/sites/all/themes/hedu2015/assets/slick/slick.js"></script> 
+  <script>
+$('.grid--3a.carousel').slick( {
+    dots: false,
+    infinite: false,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+$('.grid--full.carousel').slick( {
+    dots: false,
+    infinite: false,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+		autoplay: true,
+  	autoplaySpeed: 4000,
+  });
+$('.grid--full-w-view.carousel .view .view-content').slick( {
+    dots: false,
+    infinite: false,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+		autoplay: true,
+  	autoplaySpeed: 4000,
+  });
+</script> 
+  <script type="text/javascript">
+		var _sf_async_config={uid:2327,domain:"harvard.edu"};
+		(function(){
+		  function loadChartbeat() {
+			window._sf_endpt=(new Date()).getTime();
+			var e = document.createElement('script');
+			e.setAttribute('language', 'javascript');
+			e.setAttribute('type', 'text/javascript');
+			e.setAttribute('src',
+			   (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+			   "js/chartbeat.js");
+			document.body.appendChild(e);
+		  }
+		  var oldonload = window.onload;
+		  window.onload = (typeof window.onload != 'function') ?
+			 loadChartbeat : function() { oldonload(); loadChartbeat(); };
+		})();
+		
+		</script> 
+  <script type="text/javascript">
+// Wait for the DOM to load, then execute the view for the chosen variation.
+// This is the experiment ID from Google Analytics. Change for every new experiment.
+dataLayer.push({'ga_experiment_id': 'ICnmML8QSmGRRE_ux2VSnA' });
+
+$(document).ready( function() {
+// add ga_experiment as a class to the button.
+// This tells Tag Manager to mark a click on the button as an experiment's success metric
+// Update "card--nid" only, leave a.btn.
+$( ".card--nid-2299676 a" ).addClass('ga_experiment');
+
+// add ga_experiment as a class to the entire card
+// Update "card--nid"
+$( ".card--nid-2299676" ).addClass('ga_experiment');
+
+// create variations via Google, then define variation actions here
+// target the element as specifically as possible
+if ( chosenVariation == 1 ) { 
+  // modify headline text
+  $( ".card--nid-2299676 h2.txt-h1-alt a" ).html('The science behind lullabies');
+}
+});
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2a855aba50","applicationID":"23265856","transactionName":"MlVbYBBXXkJQAUAIWgsfbEYLGVlfVQdMT0UNQA==","queueTime":0,"applicationTime":23,"atts":"HhJYFlhNTUw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>
