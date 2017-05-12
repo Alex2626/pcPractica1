@@ -31,6 +31,9 @@ public class WebDownloader {
 
 	private static int filesDownload;
 
+	private static boolean interruptPrueba;
+	private static boolean auxPulsarTecla;
+
 	public WebDownloader(String outputFolder, int nThreads, int maxDownloads) throws IOException {
 		this.outputFolder = outputFolder;
 		this.nThreads = nThreads;
@@ -48,6 +51,9 @@ public class WebDownloader {
 		folder.mkdir();
 
 		bError = null;
+
+		this.interruptPrueba = false;
+		this.auxPulsarTecla = false;
 
 	}
 
@@ -80,21 +86,19 @@ public class WebDownloader {
 			// the website is not reachable
 			if (resp.statusCode() != 200) {
 				System.out.println("Error: "+resp.statusCode());
-				//writeError(url);
-				return "ERROR DE CONEXION EN ESTA URL";
+				writeError(url);
+				return "ERROR";
 			} else {
 				System.out.println("Todo bien");
 				String html = conn.get().html();
 				filesDownload++;
-
 				System.out.println();
 				return html;
-
 			}
 		} catch (IOException e) {
-
 			System.out.println("No se puede conectar a "+ url);
-			return url;
+			writeError(url);
+			return "ERROR";
 			/*Si se produce un error asociado a una URL (no es una URL correcta, no es posible
 					conectarse a esa web, etc.), se continuarÃ¡ con la siguiente web, sin crear el fichero
 			asociado. La web que no se ha podido descargar se escribirÃ¡ en un fichero
@@ -103,7 +107,6 @@ public class WebDownloader {
 			System.out.println("adios");
 			return null;
 		}
-
 	}
 
 	public void writeHtml(String url, String html) throws IOException {
@@ -120,7 +123,7 @@ public class WebDownloader {
 	}
 
 	public static void writeError(String url) throws IOException, InterruptedException {
-		
+
 		semWriteError.acquire();
 
 		System.out.println("ERROOOOR");
@@ -133,14 +136,18 @@ public class WebDownloader {
 		semWriteError.release();
 	}
 
+
+
 	public void process(String pathToFile) throws IOException {
 		File file = new File(pathToFile);
 		fileR =  new FileReader(file);
 		bReader = new BufferedReader(fileR);
-
+		boolean interrup = true;
         //Creamos listado de Threads
+
         List<Thread> ths = new ArrayList<Thread>();
 
+        //Timer para mostrar las descargas cada 3s
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask() {
 			@Override
@@ -153,51 +160,72 @@ public class WebDownloader {
 		};
 		timer.schedule(task, 10, 3000);
 
+		//Interrupcion con ENTER
         new Thread(() -> {
-            Scanner sc = new Scanner(System.in);
-            sc.nextLine();
-            for(Thread th:ths){
-            	System.out.println("Ha pulsado ENTER");
-				System.out.println("ARREAAA");
-				th.interrupt();
-            }
-        }).start();;
+			try {
+				while((System.in.available() <1) && (this.auxPulsarTecla != true) ){
+					System.out.println(System.in.available());
+					System.out.println("ESTOY ESPERANDO A ENTER 222");
+                    Thread.sleep(500);
+                }
+			} catch (IOException e) {
 
-		for(int i = 0; i<nThreads; i++){
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
+			}
+			//CUANDO SE PULSA LA TECLA
+			//Pongo esta condición para que si acaba el fichero no ponga nada a true ni haga cancel, ya que los Threads ya han acabado.
+			if(auxPulsarTecla != true){
+				this.interruptPrueba = true;
+                timer.cancel();
+            }else{
+				System.out.println("Han acabo todos los Threads y NO se ha pulsado Enter" +
+						"");
+			}
+		}, "ThreadStop").start();
+
+        //Creamos Threads
+      	for(int i = 0; i<nThreads; i++){
 			int ilocal = i;
 			//METER ESTRUCTURA DE DATOS CONCURRENTE CON LAS LINEAS DEL FICHERO PARA QUE TENGA EXCL MUTUA AUTOMÃ�TICA.
 			ths.add(new Thread(() -> {
+
 				String url = "aaa" ;
-				while(url != null){
-					try {
-						System.out.println("Soy Thread: " + ilocal +" voy a leer");
-						url = readUrl(bReader);
-						//Thread.sleep(50);
-						//Lo pongo aquÃ­ ya que dice que la descarga Â¡, es decir a partir de la lectura
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					try {
-						semMaxDownloads.acquire();
-						System.out.println("Extrayendo datos Thread: "+ilocal );
-						String html = extractData(url);
-						if(html != null){
-							//Thread.sleep(600);
-							semMaxDownloads.release();
-							writeHtml(url, html);
-						}else{
-							semMaxDownloads.release();
-							timer.cancel();
+					while((url != null) && (this.interruptPrueba != true)){
+						try {
+							System.out.println("Soy Thread: " + ilocal +" voy a leer");
+							url = readUrl(bReader);
+							//Thread.sleep(50);
+							//Lo pongo aquÃ­ ya que dice que la descarga Â¡, es decir a partir de la lectura
+						} catch (IOException e) {
+							e.printStackTrace();
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+						try {
+							semMaxDownloads.acquire();
+							System.out.println("Extrayendo datos Thread: "+ilocal );
+							String html = extractData(url);
+							if((html != "ERROR") &&(url != null)){
+								//Thread.sleep(600);
+								semMaxDownloads.release();
+								writeHtml(url, html);
+							}else{
+								semMaxDownloads.release();
+								timer.cancel();
+							}
+
+						} catch (IOException e) {
+							e.printStackTrace();
+						} catch (InterruptedException e) {
+							e.printStackTrace();
 						}
 
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
 				}
+
+				this.auxPulsarTecla = true;
 				System.out.println("He acabado de ejecutar "+ ilocal);
 
 			},"Thread "+(ilocal)));
@@ -206,16 +234,7 @@ public class WebDownloader {
 		for(Thread th:ths){
 			th.start();
 		}
-
-
-
-
-		//Funcion cuando pulse intro haga ths.interrupted.
-
-
 	}
-
-
 }
 
 
