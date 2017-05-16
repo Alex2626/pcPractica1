@@ -63,9 +63,6 @@ public class WebDownloader {
 			//Exclusion mutua buffer
 			semReadLine.acquire();
 			url = WebDownloader.bReader.readLine();
-			System.out.println("Leyendo url "+url);
-
-			System.out.println("Me duermo 50ms");
 			semReadLine.release();
 			//END Exclusion mutua buffer
 			//DESCARGA
@@ -78,7 +75,6 @@ public class WebDownloader {
 
 	public static String extractData(String url) throws IOException, InterruptedException {
 		try {
-			System.out.println("Extrayendo url "+url);
 			org.jsoup.Connection conn = Jsoup.connect(url);
 			// Performs the connection and retrieves the response
 			org.jsoup.Connection.Response resp = conn.execute();
@@ -89,7 +85,6 @@ public class WebDownloader {
 				writeError(url);
 				return "ERROR";
 			} else {
-				System.out.println("Todo bien");
 				String html = conn.get().html();
 				filesDownload++;
 				System.out.println();
@@ -119,14 +114,12 @@ public class WebDownloader {
 		bw = new BufferedWriter(new FileWriter(ofile));
 		bw.write(html);
 		bw.close();
-		System.out.println("Llevo "+filesDownload+" ficheros descargados ");
+
 	}
 
 	public static void writeError(String url) throws IOException, InterruptedException {
 
 		semWriteError.acquire();
-
-		System.out.println("ERROOOOR");
 		File errorFile = new File("error_log.txt");
 		bError = new BufferedWriter(new FileWriter(errorFile,true));
 
@@ -152,10 +145,11 @@ public class WebDownloader {
 		TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
-				System.out.println();
-				
-				System.out.println("Web descargadas en este momento: "+ filesDownload);
-				System.out.println();
+				System.out.println("------------------------------");
+				System.out.println("");
+				System.out.println("WEB DESCARGADAS HASTA ESTE MOMENTO -->: "+ filesDownload);
+				System.out.println("");
+				System.out.println("------------------------------");
 			}
 		};
 		timer.schedule(task, 10, 3000);
@@ -164,8 +158,6 @@ public class WebDownloader {
         new Thread(() -> {
 			try {
 				while((System.in.available() <1) && (this.auxPulsarTecla != true) ){
-					System.out.println(System.in.available());
-					System.out.println("ESTOY ESPERANDO A ENTER 222");
                     Thread.sleep(500);
                 }
 			} catch (IOException e) {
@@ -181,8 +173,7 @@ public class WebDownloader {
 				this.interruptPrueba = true;
                 timer.cancel();
             }else{
-				System.out.println("Han acabo todos los Threads y NO se ha pulsado Enter" +
-						"");
+				System.out.println("Han acabo todos los Threads y NO se ha pulsado Enter" );
 			}
 		}, "ThreadStop").start();
 
@@ -195,10 +186,7 @@ public class WebDownloader {
 				String url = "aaa" ;
 					while((url != null) && (this.interruptPrueba != true)){
 						try {
-							System.out.println("Soy Thread: " + ilocal +" voy a leer");
 							url = readUrl(bReader);
-							//Thread.sleep(50);
-							//Lo pongo aquÃ­ ya que dice que la descarga Â¡, es decir a partir de la lectura
 						} catch (IOException e) {
 							e.printStackTrace();
 						} catch (InterruptedException e) {
@@ -206,7 +194,7 @@ public class WebDownloader {
 						}
 						try {
 							semMaxDownloads.acquire();
-							System.out.println("Extrayendo datos Thread: "+ilocal );
+							System.out.println("Extrayendo datos Thread: "+ilocal+" de URL: "+ url );
 							String html = extractData(url);
 							if((html != "ERROR") &&(url != null)){
 								//Thread.sleep(600);
@@ -214,7 +202,7 @@ public class WebDownloader {
 								writeHtml(url, html);
 							}else{
 								semMaxDownloads.release();
-								timer.cancel();
+
 							}
 
 						} catch (IOException e) {
@@ -227,8 +215,10 @@ public class WebDownloader {
 
 				this.auxPulsarTecla = true;
 				System.out.println("He acabado de ejecutar "+ ilocal);
+				timer.cancel();
 
 			},"Thread "+(ilocal)));
+
 		}
 
 		for(Thread th:ths){
