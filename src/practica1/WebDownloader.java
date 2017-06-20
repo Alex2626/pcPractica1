@@ -55,10 +55,6 @@ public class WebDownloader {
 
 		bReader = null;
 
-		//Sem para leer las lineas los Threads y maxDownloads
-		//semReadLine = new Semaphore(1);
-		//semWriteError = new Semaphore(1);
-
 		semMaxDownloads = new Semaphore(maxDownloads);
 
 		lockWriteError = new ReentrantLock();
@@ -146,7 +142,6 @@ public class WebDownloader {
 	}
 
 	public static void writeError(String url) throws IOException, InterruptedException {
-
 
 		lockWriteError.lock();
 		File errorFile = new File("error_log.txt");
