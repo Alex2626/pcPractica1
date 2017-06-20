@@ -15,8 +15,10 @@ public class mainPractica1 {
 		File f = new File("top_sites_themoz.txt" );
 		BufferedReader entrada;
 
+
 		WebDownloader wd = new WebDownloader("downloads2",6,3);
 		wd.process("top_sites_themoz.txt");
+
 	}
 
 }

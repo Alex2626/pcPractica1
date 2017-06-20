@@ -11,7 +11,7 @@
   <meta charset="UTF-8"> 
   <title> Dotdash</title> 
   <link href="//www.google-analytics.com" rel="dns-prefetch"> 
-  <script src="https://player.vimeo.com/api/player.js"></script> 
+  <link href="//player.vimeo.com" rel="preconnect"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <meta name="description" content="Dotdash’s brands help over 100 million users each month find answers, solve problems, and get inspired. Dotdash is among the fastest-growing publishers online."> 
@@ -49,107 +49,10 @@ img.emoji {
   <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/dash/apple-touch-icon-152x152.png"> 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/dash/apple-touch-icon-180x180.png"> 
   <link rel="stylesheet" id="styles-css" href="/assets/css/main.css" media="all"> 
-  <script>
-    var _dotDashPlayer = false;
-    jQuery(function(){
-      scrollWatcher();
-      var height = 0;
-      setTimeout(function(){
-        jQuery('#down_arrow').addClass('transition');
-        height = jQuery(document).height()
-      }, 10);
-
-      jQuery('.toggle-dash-nav').click(function(e){
-        showDashToggle(jQuery('.dash-nav'));
-        jQuery('body').addClass('dash-nav-open').addClass('ot');
-        setTimeout(function(){
-          jQuery('body').addClass('transition-left');
-          jQuery('.wrapper').bind('click.nav', function(e){
-            var target = jQuery(e.target);
-            if(target.hasClass('dash-nav-links')){
-              return;
-            }
-            if(target.hasClass('dash-nav')){
-              return;
-            }
-            if(target.hasClass('primary-dash-nav-link')){
-              return;
-            }
-            if(target.hasClass('nav-li')){
-              return;
-            }
-            hideDashModal();
-          });
-        }, 10);
-        e.preventDefault();
-      });
-
-      jQuery('#view_all_dash_press').click(function(e){
-        showDashToggle(jQuery('.in-the-news-lightbox'));
-        e.preventDefault();
-      });
-
-      jQuery('.member .full-cover').click(function(e){
-        var target = jQuery(jQuery(this).attr('href'));
-        showDashToggle(target);
-        e.preventDefault();
-      });
-
-      jQuery('.dash-close-modal-link').click(function(e){
-        hideDashModal();
-        e.preventDefault();
-      });
-
-      jQuery(window).scroll( jQuery.throttle( 20, scrollWatcher ) );
-
-
-      var iframe = document.getElementById('dotdash_video');
-      if(iframe){
-        _dotDashPlayer = new Vimeo.Player(iframe);
-        jQuery('.play-dotdash-video').click(function(e){
-          jQuery('.overlay').css('opacity', 0);
-          setTimeout(function(){
-            jQuery('.overlay').remove();
-          }, 200);
-          _dotDashPlayer.play();
-        });
-      }
-
-      function scrollWatcher(){
-        var top = jQuery(window).scrollTop();
-        // if(top > 50){
-        //   jQuery('body').addClass('scrolled')
-        // } else {
-        //   jQuery('body').removeClass('scrolled')
-        // }
-        if(top > 100){
-          jQuery('#down_arrow').addClass('hide')
-        } else {
-          jQuery('#down_arrow').removeClass('hide')
-        }
-        if(top > height/2){
-          jQuery('#up_arrow').removeClass('hide')
-        } else {
-          jQuery('#up_arrow').addClass('hide')
-        }
-      }
-
-      function showDashToggle(el){
-        jQuery('body').addClass('dash-modal-show');
-        el.addClass('show');
-      }
-      function hideDashModal(){
-        jQuery('body').removeClass('dash-modal-show').removeClass('dash-nav-open');
-        setTimeout(function(){
-          jQuery('body').removeClass('ot');
-        }, 210); // Need to remove it after we've animated the nav back.
-        jQuery('.dash-modal.show').removeClass('show');
-        jQuery('.wrapper').unbind('click.nav');
-      }
-    });
-  </script> 
  </head> 
- <body class="dash"> 
+ <body class="dash 
+dash-home
+  "> 
   <!-- Google Tag Manager (noscript) --> 
   <noscript>
    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QL7ZM7" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -160,37 +63,34 @@ img.emoji {
   </div> 
   <!-- wrapper --> 
   <div class="wrapper"> 
-   <!-- <header id="scroll_header">
-        <header>
-        <div class="dash-menu-widget">
-          <a class="toggle-dash-nav dash-nav-link" href="#dash_nav"><img width="24" height="19" src="/assets/img/dash/hamburger.svg" alt="NAV" /></a>
-          <a href="/dash-home" class="toggle-dash-nav dash-menu-label">
-                          menu
-                      </a>
-          <div class="fixed-hi">Hi. We're Dotdash. We were About.com.</div>
-        </div>
-        </header>
-
-        <div class="dash-nav dash-nav-container dash-modal">
-          <a href="#" class="dash-close-modal-link white">CLOSE</a>
-          <ul class="dash-nav-links">
-            <li class="nav-li"><a class="primary-dash-nav-link  active " href="/">HOME</a></li>
-            <li class="nav-li"><a class="primary-dash-nav-link " href="/our-brands/">OUR BRANDS</a></li>
-            <li class="nav-li"><a class="primary-dash-nav-link " href="/our-work/">OUR WORK</a></li>
-            <li class="nav-li"><a class="primary-dash-nav-link " href="/in-the-news/">IN THE NEWS</a></li>
-            <li class="nav-li"><a class="primary-dash-nav-link " href="/our-team/" class="active">OUR TEAM</a></li>
-            <li class="nav-li"><a class="primary-dash-nav-link" href="http://jobs.jobvite.com/dotdash/">CAREERS</a></li>
-          </ul>
-        </div>
-      </header> --> 
+   <header id="scroll_header"> 
+    <header> 
+     <div class="dash-menu-widget"> 
+      <a class="toggle-dash-nav dash-nav-link nav-burger" href="#dash_nav"></a> 
+      <a href="/dash-home" class="toggle-dash-nav dash-menu-label"> <span class="dotdash-menu-trigger">menu</span></a>  
+      <div class="fixed-hi">
+       Hi. We're Dotdash.
+      </div> 
+     </div> 
+    </header> 
+    <div class="dash-nav dash-nav-container dash-modal"> 
+     <ul class="dash-nav-links"> 
+      <li class="nav-li"><a class="primary-dash-nav-link  active " href="/">HOME</a></li> 
+      <li class="nav-li"><a class="primary-dash-nav-link " href="/our-brands/">OUR BRANDS</a></li> 
+      <li class="nav-li"><a class="primary-dash-nav-link " href="/our-work/">OUR WORK</a></li> 
+      <li class="nav-li"><a class="primary-dash-nav-link " href="/in-the-news/">IN THE NEWS</a></li> 
+      <li class="nav-li"><a class="active" href="/our-team/">OUR TEAM</a></li> 
+      <li class="nav-li"><a class="primary-dash-nav-link" href="http://jobs.jobvite.com/dotdash/">CAREERS</a></li> 
+     </ul> 
+    </div> 
+   </header> 
    <!-- header --> 
    <header> 
     <div class="dash-menu-widget"> 
-     <a class="toggle-dash-nav dash-nav-link" href="#dash_nav"><img width="24" height="19" src="/assets/img/dash/hamburger.svg" alt="NAV"></a> 
-     <a href="/dash-home" class="toggle-dash-nav dash-menu-label"> menu </a> 
+     <a class="toggle-dash-nav dash-nav-link nav-burger not-fixed-bar" href="#dash_nav"></a> 
+     <a href="/dash-home" class="toggle-dash-nav dash-menu-label no-border"> menu </a> 
     </div> 
     <div class="dash-nav dash-nav-container dash-modal"> 
-     <a href="#" class="dash-close-modal-link white">CLOSE</a> 
      <ul class="dash-nav-links"> 
       <li class="nav-li"><a class="primary-dash-nav-link  active " href="/">HOME</a></li> 
       <li class="nav-li"><a class="primary-dash-nav-link " href="/our-brands/">OUR BRANDS</a></li> 
@@ -333,7 +233,7 @@ img.emoji {
      </div> 
     </div> 
     <div class="big-video-section home dash-section"> 
-     <h3 id="dotdash_our_story_header">One s<span id="story_t">t</span>ory, in a minute and a half.</h3> 
+     <h3 id="dotdash_our_story_header">Our s<span id="story_t">t</span>ory, in a minute and a half.</h3> 
      <div id="video_container"> 
       <div class="overlay play-dotdash-video">
        <div class="arrow play-dotdash-video"></div>
@@ -389,6 +289,7 @@ img.emoji {
     </footer> 
     <div id="down_arrow" class="hide"></div> 
     <a href="#" id="up_arrow"></a> 
+    <script src="https://player.vimeo.com/api/player.js"></script> 
     <script>
 /*
  * jQuery throttle / debounce - v1.1 - 3/7/2010
@@ -399,6 +300,116 @@ img.emoji {
  * http://benalman.com/about/license/
  */
 (function(b,c){var $=b.jQuery||b.Cowboy||(b.Cowboy={}),a;$.throttle=a=function(e,f,j,i){var h,d=0;if(typeof f!=="boolean"){i=j;j=f;f=c}function g(){var o=this,m=+new Date()-d,n=arguments;function l(){d=+new Date();j.apply(o,n)}function k(){h=c}if(i&&!h){l()}h&&clearTimeout(h);if(i===c&&m>e){l()}else{if(f!==true){h=setTimeout(i?k:l,i===c?e-m:e)}}}if($.guid){g.guid=j.guid=j.guid||$.guid++}return g};$.debounce=function(d,e,f){return f===c?a(d,e,false):a(d,f,e!==false)}})(this);
+
+
+
+var _dotDashPlayer = false;
+
+scrollWatcher();
+var height = 0;
+setTimeout(function() {
+    jQuery('#down_arrow').addClass('transition');
+    height = jQuery(document).height()
+}, 10);
+
+jQuery('.toggle-dash-nav').click(function(e) {
+
+    if (jQuery('body').hasClass('dash-nav-open')) {
+        hideDashModal();
+        e.preventDefault();
+        return;
+    }
+    showDashToggle(jQuery('.dash-nav'));
+    jQuery('body').addClass('dash-nav-open').addClass('ot');
+    setTimeout(function() {
+        jQuery('body').addClass('transition-left');
+        jQuery('.wrapper').bind('click.nav', function(e) {
+            var target = jQuery(e.target);
+            if (target.hasClass('dash-nav-links')) {
+                return;
+            }
+            if (target.hasClass('dash-nav')) {
+                return;
+            }
+            if (target.hasClass('nav-burger')) {
+                return;
+            }
+            if (target.hasClass('primary-dash-nav-link')) {
+                return;
+            }
+            if (target.hasClass('nav-li')) {
+                return;
+            }
+            hideDashModal();
+        });
+    }, 10);
+    e.preventDefault();
+});
+
+jQuery('#view_all_dash_press').click(function(e) {
+    showDashToggle(jQuery('.in-the-news-lightbox'));
+    e.preventDefault();
+});
+
+jQuery('.member .full-cover').click(function(e) {
+    var target = jQuery(jQuery(this).attr('href'));
+    showDashToggle(target);
+    e.preventDefault();
+});
+
+jQuery('.dash-close-modal-link').click(function(e) {
+    hideDashModal();
+    e.preventDefault();
+});
+
+jQuery(window).scroll(jQuery.throttle(20, scrollWatcher));
+
+
+var iframe = document.getElementById('dotdash_video');
+if (iframe) {
+    _dotDashPlayer = new Vimeo.Player(iframe);
+    jQuery('.play-dotdash-video').click(function(e) {
+        jQuery('.overlay').css('opacity', 0);
+        setTimeout(function() {
+            jQuery('.overlay').remove();
+        }, 200);
+        _dotDashPlayer.play();
+    });
+}
+
+function scrollWatcher() {
+    var top = jQuery(window).scrollTop();
+    if (top > 50) {
+        jQuery('body').addClass('scrolled')
+    } else {
+        jQuery('body').removeClass('scrolled')
+    }
+    if (top > 100) {
+        jQuery('#down_arrow').addClass('hide')
+    } else {
+        jQuery('#down_arrow').removeClass('hide')
+    }
+    if (top > height / 2) {
+        jQuery('#up_arrow').removeClass('hide')
+    } else {
+        jQuery('#up_arrow').addClass('hide')
+    }
+}
+
+function showDashToggle(el) {
+    jQuery('body').addClass('dash-modal-show');
+    el.addClass('show');
+}
+
+function hideDashModal() {
+    jQuery('body').removeClass('dash-modal-show').removeClass('dash-nav-open');
+    setTimeout(function() {
+        jQuery('body').removeClass('ot');
+    }, 210); // Need to remove it after we've animated the nav back.
+    jQuery('.dash-modal.show').removeClass('show');
+    jQuery('.wrapper').unbind('click.nav');
+}
+
 </script> 
    </main>
   </div>

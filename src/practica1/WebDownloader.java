@@ -7,6 +7,7 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.thoughtworks.xstream.mapper.Mapper;
 
 */
+import clojure.lang.IFn;
 import org.jsoup.Jsoup;
 
 import javax.sound.midi.Soundbank;
@@ -14,6 +15,8 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class WebDownloader {
 
@@ -25,27 +28,45 @@ public class WebDownloader {
 	private static BufferedWriter bError;
 	private static FileReader fileR;
 
-	private static Semaphore semReadLine;
+	//private static Semaphore semReadLine;
+	//private static Semaphore semWriteError;
 	private static Semaphore semMaxDownloads;
-	private static Semaphore semWriteError;
+
+	private static Lock lockWriteError;
+	private static Lock lockReadLine;
+	private static Lock lockFilesDowoad;
+	private static Lock lockAuxPulsarTecla;
+	private static Lock lockInterruptPrueba;
+	private static Lock lockStringBuilder;
 
 	private static int filesDownload;
 
 	private static boolean interruptPrueba;
 	private static boolean auxPulsarTecla;
+	//ESTAS DOS STATIC ATOMIC BOOLEAN
+
+	private static StringBuilder stringBuilder;
 
 	public WebDownloader(String outputFolder, int nThreads, int maxDownloads) throws IOException {
 		this.outputFolder = outputFolder;
 		this.nThreads = nThreads;
 		this.maxDownloads = maxDownloads;
 		filesDownload = 0;
-		
+
 		bReader = null;
 
 		//Sem para leer las lineas los Threads y maxDownloads
-		semReadLine = new Semaphore(1);
+		//semReadLine = new Semaphore(1);
+		//semWriteError = new Semaphore(1);
+
 		semMaxDownloads = new Semaphore(maxDownloads);
-		semWriteError = new Semaphore(1);
+
+		lockWriteError = new ReentrantLock();
+		lockReadLine = new ReentrantLock();
+		lockFilesDowoad = new ReentrantLock();
+		lockAuxPulsarTecla = new ReentrantLock();
+		lockInterruptPrueba = new ReentrantLock();
+		lockStringBuilder = new ReentrantLock();
 		//Create directory to save the files
 		this.folder = new File(outputFolder);
 		folder.mkdir();
@@ -55,15 +76,20 @@ public class WebDownloader {
 		this.interruptPrueba = false;
 		this.auxPulsarTecla = false;
 
+
+
+		stringBuilder = new StringBuilder();
 	}
 
 	public String readUrl(BufferedReader bReader) throws IOException, InterruptedException {
 		String url = null;
 		if(WebDownloader.bReader != null){
 			//Exclusion mutua buffer
-			semReadLine.acquire();
+
+			lockReadLine.lock();
 			url = WebDownloader.bReader.readLine();
-			semReadLine.release();
+			lockReadLine.unlock();
+
 			//END Exclusion mutua buffer
 			//DESCARGA
 		}else{
@@ -86,7 +112,9 @@ public class WebDownloader {
 				return "ERROR";
 			} else {
 				String html = conn.get().html();
+				lockFilesDowoad.lock();
 				filesDownload++;
+				lockFilesDowoad.unlock();
 				System.out.println();
 				return html;
 			}
@@ -119,16 +147,38 @@ public class WebDownloader {
 
 	public static void writeError(String url) throws IOException, InterruptedException {
 
-		semWriteError.acquire();
+
+		lockWriteError.lock();
 		File errorFile = new File("error_log.txt");
 		bError = new BufferedWriter(new FileWriter(errorFile,true));
 
 		bError.write(url + "\n");
 		bError.close();
 
-		semWriteError.release();
+		//No es necesario pero se puede usar el lock
+		lockStringBuilder.lock();
+		stringBuilder.append("La web "+url+" no se ha podido descargar" +"\n");
+		lockStringBuilder.unlock();
+
+		lockWriteError.unlock();
+
 	}
 
+	public boolean isAuxPulsarTecla(){
+		boolean aux;
+		lockAuxPulsarTecla.lock();
+		aux = auxPulsarTecla;
+		lockAuxPulsarTecla.unlock();
+		return aux;
+	}
+
+	public boolean isInterruptPrueba(){
+		boolean aux;
+		lockInterruptPrueba.lock();
+		aux = interruptPrueba;
+		lockInterruptPrueba.unlock();
+		return aux;
+	}
 
 
 	public void process(String pathToFile) throws IOException {
@@ -154,10 +204,11 @@ public class WebDownloader {
 		};
 		timer.schedule(task, 10, 3000);
 
+
 		//Interrupcion con ENTER
         new Thread(() -> {
 			try {
-				while((System.in.available() <1) && (this.auxPulsarTecla != true) ){
+				while((System.in.available() <1) && (!isAuxPulsarTecla()) ){
                     Thread.sleep(500);
                 }
 			} catch (IOException e) {
@@ -169,11 +220,17 @@ public class WebDownloader {
 			}
 			//CUANDO SE PULSA LA TECLA
 			//Pongo esta condición para que si acaba el fichero no ponga nada a true ni haga cancel, ya que los Threads ya han acabado.
-			if(auxPulsarTecla != true){
+			if(!isAuxPulsarTecla()){
+				lockInterruptPrueba.lock();
 				this.interruptPrueba = true;
+				lockInterruptPrueba.unlock();
                 timer.cancel();
-            }else{
+				System.out.println("STRING BUILDER: ");
+				System.out.println(stringBuilder);
+			}else{
+				System.out.println("STRING BUILDER: ");
 				System.out.println("Han acabo todos los Threads y NO se ha pulsado Enter" );
+				System.out.println(stringBuilder);
 			}
 		}, "ThreadStop").start();
 
@@ -184,7 +241,7 @@ public class WebDownloader {
 			ths.add(new Thread(() -> {
 
 				String url = "aaa" ;
-					while((url != null) && (this.interruptPrueba != true)){
+					while((url != null) && (!isInterruptPrueba())){
 						try {
 							url = readUrl(bReader);
 						} catch (IOException e) {
@@ -197,12 +254,13 @@ public class WebDownloader {
 							System.out.println("Extrayendo datos Thread: "+ilocal+" de URL: "+ url );
 							String html = extractData(url);
 							if((html != "ERROR") &&(url != null)){
-								//Thread.sleep(600);
+								lockStringBuilder.lock();
+								stringBuilder.append("La web "+url+" se ha descargado correctamente" +"\n");
+								lockStringBuilder.unlock();
 								semMaxDownloads.release();
 								writeHtml(url, html);
 							}else{
 								semMaxDownloads.release();
-
 							}
 
 						} catch (IOException e) {
@@ -212,8 +270,9 @@ public class WebDownloader {
 						}
 
 				}
-
+				lockAuxPulsarTecla.lock();
 				this.auxPulsarTecla = true;
+				lockAuxPulsarTecla.unlock();
 				System.out.println("He acabado de ejecutar "+ ilocal);
 				timer.cancel();
 

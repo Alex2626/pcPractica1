@@ -29,11 +29,11 @@
   <link href="/templates/joomla/images/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"> 
   <link href="/templates/joomla/images/apple-touch-icon.png" rel="apple-touch-icon"> 
   <link href="/templates/joomla/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"> 
-  <link href="/templates/joomla/css/template.min.css?2.2.0" rel="stylesheet"> 
-  <link href="/templates/joomla/css/custom.css?f14baadd2bf646d31447b837bac80245" rel="stylesheet"> 
+  <link href="/templates/joomla/css/template.min.css?2.2.1-dev" rel="stylesheet"> 
+  <link href="/templates/joomla/css/custom.css?e82ce998bb847adab3516c03b0e6a7c8" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-  <link href="/media/jui/css/chosen.css?f14baadd2bf646d31447b837bac80245" rel="stylesheet"> 
-  <link href="/media/com_finder/css/finder.css?f14baadd2bf646d31447b837bac80245" rel="stylesheet"> 
+  <link href="/media/jui/css/chosen.css?e82ce998bb847adab3516c03b0e6a7c8" rel="stylesheet"> 
+  <link href="/media/com_finder/css/finder.css?e82ce998bb847adab3516c03b0e6a7c8" rel="stylesheet"> 
   <style>
 #scrollToTop {
 	cursor: pointer;
@@ -69,17 +69,17 @@
 			font-family: 'Open Sans', sans-serif;
 		}
 	</style> 
-  <script src="/media/jui/js/jquery.min.js?f14baadd2bf646d31447b837bac80245"></script> 
-  <script src="/media/jui/js/jquery-noconflict.js?f14baadd2bf646d31447b837bac80245"></script> 
-  <script src="/media/jui/js/jquery-migrate.min.js?f14baadd2bf646d31447b837bac80245"></script> 
+  <script src="/media/jui/js/jquery.min.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
+  <script src="/media/jui/js/jquery-noconflict.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
+  <script src="/media/jui/js/jquery-migrate.min.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
   <script src="/media/plg_system_sl_scrolltotop/js/scrolltotop_jq.js"></script> 
-  <script src="/media/jui/js/bootstrap.min.js?f14baadd2bf646d31447b837bac80245"></script> 
-  <script src="/templates/joomla/js/template.js?f14baadd2bf646d31447b837bac80245"></script> 
-  <script src="/templates/joomla/js/blockadblock.js?f14baadd2bf646d31447b837bac80245"></script> 
-  <script src="/templates/joomla/js/js.cookie.js?f14baadd2bf646d31447b837bac80245"></script> 
-  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?f14baadd2bf646d31447b837bac80245"></script><![endif]--> 
-  <script src="/media/jui/js/chosen.jquery.min.js?f14baadd2bf646d31447b837bac80245"></script> 
-  <script src="/media/jui/js/jquery.autocomplete.min.js?f14baadd2bf646d31447b837bac80245"></script> 
+  <script src="/media/jui/js/bootstrap.min.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
+  <script src="/templates/joomla/js/template.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
+  <script src="/templates/joomla/js/blockadblock.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
+  <script src="/templates/joomla/js/js.cookie.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?e82ce998bb847adab3516c03b0e6a7c8"></script><![endif]--> 
+  <script src="/media/jui/js/chosen.jquery.min.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
+  <script src="/media/jui/js/jquery.autocomplete.min.js?e82ce998bb847adab3516c03b0e6a7c8"></script> 
   <script>
 jQuery(document).ready(function() {
 	jQuery(document.body).SLScrollToTop({
@@ -161,6 +161,17 @@ jQuery(document).ready(function() {
   <script type="text/javascript">
 var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunload"]="BeforeUnload";n[n.Abort="abort"]="Abort";n[n.Error="error"]="Error"})(WindowEvent||(WindowEvent={}));var AjaxTiming=function(){function n(n,t,i,r){var u=this;this.getPerformanceTimings=function(n){u.connect=n.connectEnd-n.connectStart;u.dns=n.domainLookupEnd-n.domainLookupStart;u.duration=n.duration;u.load=n.responseEnd-n.requestStart;u.wait=n.startTime;u.redirect=n.redirectEnd-n.redirectStart;n.secureConnectionStart&&(u.ssl=n.connectEnd-n.secureConnectionStart)};this.url=n;this.method=t;this.isAsync=i;this.open=r}return n}(),ProfilerJsError=function(){function n(n,t,i){this.count=0;this.message=n;this.url=t;this.lineNumber=i}return n.createText=function(n,t,i){return[n,t,i].join(":")},n.prototype.getText=function(){return n.createText(this.message,this.url,this.lineNumber)},n}(),ProfilerEventManager=function(){function n(){this.events=[];this.hasAttachEvent=!!window.attachEvent}return n.prototype.add=function(n,t,i){this.events.push({type:n,target:t,func:i});this.hasAttachEvent?t.attachEvent("on"+n,i):t.addEventListener(n,i,!1)},n.prototype.clear=function(){for(var n,t=0,i=this.events;t<i.length;t++)n=i[t],this.hasAttachEvent?n.target.detachEvent(n.type,n.func):n.target.removeEventListener(n.type,n.func,!1);this.events=[]},n}(),RProfiler=function(){function n(){function s(n){var t=n.target||n.srcElement;return t.nodeType==3&&(t=t.parentNode),u("N/A",t.src||t.URL,-1),!1}var n=this,u,f,t,i,e;this.restUrl="g.3gl.net/jp/98/v3/M";this.startTime=(new Date).getTime();this.info={};this.hasInsight=!1;this.data={start:this.startTime,jsCount:0,jsErrors:[],loadTime:-1,loadFired:!1,ajax:[]};this.eventManager=new ProfilerEventManager;this.startAjaxCapture=function(){var i=XMLHttpRequest.prototype,o=i.open,s=i.send,r=[],u={},e=n.data.ajax,h=25,f=typeof performance=="object"&&typeof window.performance.now=="function"&&typeof window.performance.getEntriesByType=="function",t;f&&window.performance.setResourceTimingBufferSize(300);t=function(){return f?window.performance.now():(new Date).getTime()};i.open=function(n,i,u,f,e){u===void 0&&(u=!0);this.rpIndex=r.length;r.push(new AjaxTiming(i,n,u,t()));o.call(this,n,i,u,f,e)};i.send=function(n){var i=this,c=this.onreadystatechange,o;(this.onreadystatechange=function(){var n=r[i.rpIndex],o;if(n){o=i.readyState;switch(o){case 1:n.connectionEstablished=t();break;case 2:n.requestReceived=t();break;case 3:n.processingTime=t();break;case 4:n.complete=t();n.responseSize=i.responseText.length,function(n){setTimeout(function(){var r,s,h,c,o;if(f){var i=n.url,t=[],l=performance.getEntriesByType("resource");for(r=0,s=l;r<s.length;r++)h=s[r],h.name==i&&t.push(h);if(e.push(n),t.length!=0){if(u[i]||(u[i]=[]),t.length==1){n.getPerformanceTimings(t[0]);u[i].push(0);return}c=u[i];for(o in t)if(c.indexOf(o)==-1){n.getPerformanceTimings(t[o]);c.push(o);return}n.getPerformanceTimings(t[0])}}},h)}(n,e)}typeof c=="function"&&c.call(i)}},o=r[this.rpIndex],o)&&(n&&!isNaN(n.length)&&(o.sendSize=n.length),o.send=t(),s.call(this,n))}};this.recordPageLoad=function(){n.data.loadTime=(new Date).getTime();n.data.loadFired=!0};this.addError=function(t,i,r){var s,f,u,e,o;for(n.data.jsCount++,s=ProfilerJsError.createText(t,i,r),f=n.data.jsErrors,u=0,e=f;u<e.length;u++)if(o=e[u],o.getText()==s){o.count++;return}f.push(new ProfilerJsError(t,i,r))};this.addInfo=function(t,i,r){if(!n.isNullOrEmpty(t)){if(n.isNullOrEmpty(r))n.info[t]=i;else{if(n.isNullOrEmpty(i))return;n.isNullOrEmpty(n.info[t])&&(n.info[t]={});n.info[t][i]=r}n.hasInsight=!0}};this.clearInfo=function(){n.info={};n.hasInsight=!1};this.getInfo=function(){return n.hasInsight?n.info:null};this.eventManager.add(WindowEvent.Load,window,this.recordPageLoad);u=this.addError;this.startAjaxCapture();window.opera?this.eventManager.add(WindowEvent.Error,document,s):"onerror"in window&&(f=window.onerror,window.onerror=function(n,t,i){return(u(n,t,i),!!f)?f(n,t,i):!1});!window.__cpCdnPath||(this.restUrl=window.__cpCdnPath.trim());t=document.createElement("iframe");i=t.style;i.position="absolute";i.top="-10000px";i.left="-1000px";e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e);var o=t.contentWindow.document.open("text/html","replace"),h=window.location.protocol+"//",r='<body onload="';r+="function s(u){var d=document,s=d.createElement('script');s.type='text/javascript';s.src=u;d.body.appendChild(s);}";r+="s('"+h+this.restUrl+"');";r+='"><\/body>';o.write(r);o.close()}return n.prototype.isNullOrEmpty=function(n){if(n===undefined||n===null)return!0;if(typeof n=="string"){var t=n;return t.trim().length==0}return!1},n.prototype.dispatchCustomEvent=function(n){(function(n){function t(n,t){t=t||{bubbles:!1,cancelable:!1,detail:undefined};var i=document.createEvent("CustomEvent");return i.initCustomEvent(n,t.bubbles,t.cancelable,t.detail),i}if(typeof n.CustomEvent=="function")return!1;t.prototype=Event.prototype;n.CustomEvent=t})(window);var t=new CustomEvent(n);window.dispatchEvent(t)},n}(),profiler=new RProfiler;window.RProfiler=profiler;window.WindowEvent=WindowEvent;profiler.dispatchCustomEvent("GlimpseLoaded");
 </script> 
+  <script>
+	var _prum = [['id', '59300ad15992c776ad970068'],
+	             ['mark', 'firstbyte', (new Date()).getTime()]];
+	(function() {
+	    var s = document.getElementsByTagName('script')[0]
+	      , p = document.createElement('script');
+	    p.async = 'async';
+	    p.src = '//rum-static.pingdom.net/prum.min.js';
+	    s.parentNode.insertBefore(p, s);
+	})();
+	</script> 
  </head> 
  <body class="site com_empty view-default layout-default task-display itemid-122 fluid"> 
   <!-- Google Tag Manager --> 
@@ -285,7 +296,7 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
       <li class="item-466"><a href="https://www.joomla.org/3/">Joomla! 3.7</a></li>
       <li class="item-154 parent"><a href="/announcements.html">News</a></li>
       <li class="item-348"><a href="/contribute-to-joomla.html">Contribute</a></li>
-      <li class="item-220"><a href="/media-contact.html">Contact</a></li>
+      <li class="item-220"><a href="/media-contact.html">Press Inquiries</a></li>
      </ul> 
     </div> 
    </div> 
@@ -295,58 +306,58 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
    <div class="container-fluid"> 
     <div class="moduletable topbanner"> 
      <div class="custom topbanner"> 
-      <div class="hero-overlay"> 
-       <div class="container"> 
-        <div class="custom hero-heading center"> 
-         <h2>The Free Software Powering Millions of Websites</h2> 
-         <p>Joomla! is an award-winning content management system (CMS), which enables you to build web sites and powerful online applications.</p> 
-        </div> 
-        <div class="hero-teaser row-fluid center"> 
-         <div class="span4"> 
+      <div class="hero-overlay">
+       <div class="container">
+        <div class="custom hero-heading center">
+         <h2>The Flexible Platform Empowering Website Creators</h2>
+         <p>Joomla! is an award-winning content management system (CMS), which enables you to build web sites and powerful online applications.</p>
+        </div>
+        <div class="hero-teaser row-fluid center">
+         <div class="span4">
           <article>
            <header class="hidden-phone">
-            <a href="https://downloads.joomla.org" title="Download Joomla!"><span class="icon-circled icon-circled-sm icon-shadowed"> <span class="icon-download svg-icon"></span></span></a> 
-            <h3 class="hero-teaser-title">Download Joomla!</h3> 
-           </header> 
-           <div class="hero-teaser-body hidden-phone"> 
-            <p>Download and Install Joomla! in your own server or development environment.</p> 
-           </div> 
+            <a href="https://downloads.joomla.org" title="Download Joomla!"><span class="icon-circled icon-circled-sm icon-shadowed"> <span class="icon-download svg-icon"></span></span></a>
+            <h3 class="hero-teaser-title">Download Joomla!</h3>
+           </header>
+           <div class="hero-teaser-body hidden-phone">
+            <p>Download and Install Joomla! in your own server or development environment.</p>
+           </div>
            <footer>
             <a href="https://downloads.joomla.org" title="Download Joomla!">Download Joomla! →</a>
            </footer>
-          </article> 
-         </div> 
-         <div class="span4"> 
+          </article>
+         </div>
+         <div class="span4">
           <article>
            <header class="hidden-phone">
-            <a href="https://www.joomla.com" title="Free hosted Joomla! website"><span class="icon-circled icon-circled-sm icon-shadowed"><span class="icon-rocket svg-icon"></span> </span></a> 
-            <h3 class="hero-teaser-title">Use Joomla!</h3> 
-           </header> 
-           <div class="hero-teaser-body hidden-phone"> 
-            <p>Quickly launch a basic version of Joomla! on joomla.com. Easily upgrade for additional features.</p> 
-           </div> 
+            <a href="https://www.joomla.com" title="Free hosted Joomla! website"><span class="icon-circled icon-circled-sm icon-shadowed"><span class="icon-rocket svg-icon"></span> </span></a>
+            <h3 class="hero-teaser-title">Use Joomla!</h3>
+           </header>
+           <div class="hero-teaser-body hidden-phone">
+            <p>Quickly launch a basic version of Joomla! on joomla.com. Easily upgrade for additional features.</p>
+           </div>
            <footer>
             <a href="https://www.joomla.com" title="Free hosted Joomla! website">Launch Joomla! →</a>
            </footer>
-          </article> 
-         </div> 
-         <div class="span4"> 
+          </article>
+         </div>
+         <div class="span4">
           <article>
            <header class="hidden-phone">
-            <a href="https://demo.joomla.org/" title="Joomla! Demo"><span class="icon-circled icon-circled-sm icon-shadowed"> <span class="icon-screen svg-icon"></span> </span></a> 
-            <h3 class="hero-teaser-title">Try Joomla!</h3> 
-           </header> 
-           <div class="hero-teaser-body hidden-phone"> 
-            <p>Experiment with a full 90 day demo version of Joomla. Great for testing an extension or template.</p> 
-           </div> 
+            <a href="https://demo.joomla.org/" title="Joomla! Demo"><span class="icon-circled icon-circled-sm icon-shadowed"> <span class="icon-screen svg-icon"></span> </span></a>
+            <h3 class="hero-teaser-title">Try Joomla!</h3>
+           </header>
+           <div class="hero-teaser-body hidden-phone">
+            <p>Experiment with a full 90 day demo version of Joomla. Great for testing an extension or template.</p>
+           </div>
            <footer>
             <a href="https://demo.joomla.org/" title="Joomla! Demo">Start Joomla! Demo →</a>
            </footer>
-          </article> 
-         </div> 
-        </div> 
-       </div> 
-      </div> 
+          </article>
+         </div>
+        </div>
+       </div>
+      </div>
       <div class="clear">
        &nbsp;
       </div>
@@ -356,20 +367,21 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
      <div class="custom announcements"> 
       <div class="row-fluid customcontainer"> 
        <div class="span6">
-        <a href="http://jandbeyond.org/" title="Joomla! - JandBeyound2017" target="_blank" rel="noopener noreferrer"><img src="/images/homepage/jandbeyond-2017.jpg" alt="jandbeyond 2017"></a>
+        <a href="https://community.joomla.org/joomla-training.html" title="Joomla! video training"><img src="/images/homepage/joomla-training.jpg" alt="joomla training"></a>
        </div> 
        <div class="moduletable span6"> 
         <h2>Joomla! Announcements</h2> 
         <div class="newsflash"> 
-         <h3 class="newsflash-title"> <a href="/announcements/release-news/5704-important-security-announcement-pre-release-371.html"> Joomla! 3.7.1 - Important Security Announcement - Patch Available Soon </a> </h3> 
+         <h3 class="newsflash-title"> <a href="/announcements/release-news/5706-joomla-3-7-2-release.html"> Joomla! 3.7.2 Release </a> </h3> 
          <div class="newsflash-body">
-          A Joomla! 3.7.1 release containing a security fix will be published on Wednesday 17th May at approximately 14:00 UTC. The Joomla! Security Strike Team (JSST) has been informed of&nbsp;a critical security issue in the Joomla! core. Since...
+           Joomla! 3.7.2 is now available. This is a bug fix release for the 3.x series of Joomla. This release fixes some bugs in file mime checks, module page filtering as well as some other bugs...
          </div> 
-         <h3 class="newsflash-title"> <a href="/announcements/release-news/5703-joomla-3-7-is-here.html"> Joomla! 3.7 is HERE </a> </h3> 
+         <p class="readmore"> <a class="btn" href="/announcements/release-news/5706-joomla-3-7-2-release.html" itemprop="url"> <span class="icon-chevron-right"></span> Read more ... </a> </p> 
+         <h3 class="newsflash-title"> <a href="/announcements/release-news/5705-joomla-3-7-1-release.html"> Joomla! 3.7.1 Release </a> </h3> 
          <div class="newsflash-body">
-           The Joomla! Project is proud to announce the release of Joomla! 3.7, the latest in the ‘Joomla! 3’ series. This new release features over 700 improvements to the popular CMS, including many features which make...
+           Joomla! 3.7.1 is now available. This is a security release for the 3.x series of Joomla! which addresses one critical security vulnerability and several bug fixes. We strongly recommend that you update your sites immediately. 
          </div> 
-         <p class="readmore"> <a class="btn" href="/announcements/release-news/5703-joomla-3-7-is-here.html" itemprop="url"> <span class="icon-chevron-right"></span> Read more ... </a> </p> 
+         <p class="readmore"> <a class="btn" href="/announcements/release-news/5705-joomla-3-7-1-release.html" itemprop="url"> <span class="icon-chevron-right"></span> Read more ... </a> </p> 
         </div> 
        </div> 
       </div> 
@@ -451,19 +463,19 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
          <div style="direction: ltr; text-align: left ! important" class="feed"> 
           <!-- Show items --> 
           <div class="newsfeed"> 
-           <h4 class="feed-link"> <a href="https://developer.joomla.org/news/691-call-for-a-team-leader-assistant-team-leader-joomla-ux-team.html" target="_blank"> Call for a Team Leader &amp; Assistant Team Leader - Joomla! User Experience Team</a></h4> 
+           <h4 class="feed-link"> <a href="https://developer.joomla.org/news/693-plan-for-the-joomla-3-8-release.html" target="_blank"> Plan for the Joomla! 3.8 Release</a></h4> 
+           <div class="feed-posted">
+            June 3, 2017 by Michael Babker
+           </div> 
+           <div class="feed-item-description">
+             Today we are pleased to share our plan for the Joomla! 3.8 release and we would like your help in getting ready for the release. 
+           </div> 
+           <h4 class="feed-link"> <a href="https://developer.joomla.org/news/691-call-for-a-team-leader-assistant-team-leader-joomla-ux-team.html" target="_blank"> [CLOSED] Call for a Team Leader &amp; Assistant Team Leader - Joomla! User Experience Team</a></h4> 
            <div class="feed-posted">
             May 4, 2017 by Joomla! User Experience Team
            </div> 
            <div class="feed-item-description">
              The Joomla! User Experience Team is looking for Joomla! Users with leadership and UX skills to lead and co-lead the team. 
-           </div> 
-           <h4 class="feed-link"> <a href="https://developer.joomla.org/news/682-joomla-3-7-0-release-candidate-4.html" target="_blank"> Joomla! 3.7.0 Release Candidate 4</a></h4> 
-           <div class="feed-posted">
-            April 25, 2017 by Robert Deutz
-           </div> 
-           <div class="feed-item-description">
-             Because we are trying to make the difference between the last RC and the stable release as small as possible, we released today Joomla! 3.7.0... 
            </div> 
           </div> 
          </div> 
@@ -473,19 +485,19 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
          <div style="direction: ltr; text-align: left ! important" class="feed"> 
           <!-- Show items --> 
           <div class="newsfeed"> 
-           <h4 class="feed-link"> <a href="https://community.joomla.org/gsoc-2017/3111-meet-the-google-summer-of-code-2017-team.html" target="_blank"> Meet the Google Summer of Code 2017 Team</a></h4> 
+           <h4 class="feed-link"> <a href="https://community.joomla.org/blogs/community/3113-how-do-you-joomla.html" target="_blank"> How do you #joomla?</a></h4> 
            <div class="feed-posted">
-            May 13, 2017 by Puneet Kala
+            June 1, 2017 by Parth Lawate
            </div> 
            <div class="feed-item-description">
-             Another great year for Joomla! Google summer of code just started. This year we got the awesome amount of 10 students to help improving Joomla! on... 
+             Who are the users of the Product? What is its target market and how do people use it? These questions are very important in deciding the direction... 
            </div> 
-           <h4 class="feed-link"> <a href="https://community.joomla.org/blogs/community/3110-joomla-marketing-needs-you.html" target="_blank"> Joomla! Marketing needs YOU!</a></h4> 
+           <h4 class="feed-link"> <a href="https://community.joomla.org/blogs/community/3112-the-marketing-team-is-looking-for-a-lead-designer.html" target="_blank"> The Marketing Team is looking for a Lead Designer </a></h4> 
            <div class="feed-posted">
-            April 22, 2017 by Chris Paschen
+            June 1, 2017 by Parth Lawate
            </div> 
            <div class="feed-item-description">
-             The Joomla! Marketing Team is engaging in an exciting new plan centered around a comprehensive strategic marketing plan, implemented through a... 
+             Do you have a creative streak and wish to make a positive global impact? Are you looking to work on a global brand that has a massive worldwide... 
            </div> 
           </div> 
          </div> 
@@ -495,19 +507,19 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
          <div style="direction: ltr; text-align: left ! important" class="feed"> 
           <!-- Show items --> 
           <div class="newsfeed"> 
-           <h4 class="feed-link"> <a href="https://volunteers.joomla.org/teams/gsoc-17-parallel-testing/reports/523-2nd-meeting-gsoc-17-parallel-testing" target="_blank"> 2nd Meeting: GSoC 17 Parallel Testing</a></h4> 
+           <h4 class="feed-link"> <a href="https://volunteers.joomla.org/teams/certification-team/reports/560-joomla-certification-steering-team-meeting-20-june" target="_blank"> Joomla! Certification Steering Team Meeting (20 June 2017)</a></h4> 
            <div class="feed-posted">
-            May 15, 2017 by Flavius Andrei Isac
+            June 20, 2017 by Sam Suresh
            </div> 
            <div class="feed-item-description">
-             Date: 12th May 2017 Time: 05:00 (UTC / GMT) 07:00 (CEST) 
+             Joomla! Certification Steering Team Meeting (20 June 2017) &nbsp; The Joomla! Certification Steering Team meeting was held via Glip &nbsp;... 
            </div> 
-           <h4 class="feed-link"> <a href="https://volunteers.joomla.org/teams/social-media-team/reports/522-social-media-team-meeting-15-may-2017" target="_blank"> Social Media Team Meeting; 15 May 2017</a></h4> 
+           <h4 class="feed-link"> <a href="https://volunteers.joomla.org/board-of-directors/reports/559-osm-inc-full-board-meeting-june-15-2017" target="_blank"> OSM, Inc. - Full Board Meeting - June 15, 2017</a></h4> 
            <div class="feed-posted">
-            May 15, 2017 by Sigrid Suski
+            June 20, 2017 by Luca Marzo
            </div> 
            <div class="feed-item-description">
-             Attendees: Sigrid Suski, Sandra Decoux, Radek Suski, Alison Meeks, Hans van der Meer (later, excused) The following topics were discussed: 1.... 
+             Open Source Matters, Inc.Full Board of Directors and Officers Meeting Date: June 15, 2017 Time: 17:00 UTC Total time of meeting: 1... 
            </div> 
           </div> 
          </div> 
@@ -521,10 +533,10 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
          </figure> 
          <h3>JoomlaDays</h3> 
          <ul> 
-          <li>Joomla! User Group <strong>Richmond</strong> May Meeting, May 23th</li> 
-          <li>JandBeyond 2017, June 2nd to 4th</li> 
-          <li>JoomlaDay <strong>Australia</strong>, June 17th to 18th</li> 
-          <li>JoomlaDay <strong>Russia</strong>, June 17th</li> 
+          <li>JoomlaDay <strong>Tanzania Arusha</strong>, July 1st</li> 
+          <li>JoomlaDay <strong>UK</strong>, July 8th</li> 
+          <li>JoomlaDay <strong>Kuala Lumpur Malaysia</strong>, August 12th</li> 
+          <li>JoomlaDay <strong> Israel</strong>, September 12th</li> 
          </ul> 
          <p class="text-center"><a class="btn btn-primary btn-large" title="Joomla! Events" href="https://community.joomla.org/events.html">More events</a></p> 
         </div> 
@@ -546,7 +558,7 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
         <div class="row no-gutter"> 
          <div class="span2 numbers-box installations"> 
           <div class="numbers-text">
-           <span class="number"><span class="count-up" data-from="0" data-to="81">81</span> <sup>+</sup></span>
+           <span class="number"><span class="count-up" data-from="0" data-to="82">82</span> <sup>+</sup></span>
            <br>Million
            <br>Downloads
           </div> 
@@ -635,41 +647,41 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
     </div> 
     <div class="moduletable who center customcontainer"> 
      <div class="custom who center customcontainer"> 
-      <h2>Who is using Joomla?</h2> 
-      <p class="lead">Joomla! is trusted by some of the world’s most well-known companies and much-loved brands as well as millions of websites throughout the world!</p> 
-      <div class="row-fluid effects"> 
+      <h2>Who is using Joomla?</h2>
+      <p class="lead">Joomla! is trusted by some of the world’s most well-known companies and much-loved brands as well as millions of websites throughout the world!</p>
+      <div class="row-fluid effects">
        <figure class="effect span3">
         <img src="/images/homepage/joomla-showcase-1.jpg" alt="Joomla websites"> 
-        <figcaption> 
-         <h3>Eclipse <span>Shutters</span></h3> 
-         <p>More websites on the Showcase Directory</p> 
+        <figcaption>
+         <h3>Yelken <span>Bayrak</span></h3>
+         <p>More websites on the Showcase Directory</p>
          <a href="https://showcase.joomla.org" title="Joomla! showcase directory">View more</a> 
         </figcaption>
-       </figure> 
+       </figure>
        <figure class="effect span3">
         <img src="/images/homepage/joomla-showcase-2.jpg" alt="Joomla websites"> 
-        <figcaption> 
-         <h3>Turismo <span>Hoya de Huesca</span></h3> 
-         <p>More websites on the Showcase Directory</p> 
+        <figcaption>
+         <h3>Swiss Federal <span>Audit Office</span></h3>
+         <p>More websites on the Showcase Directory</p>
          <a href="https://showcase.joomla.org" title="Joomla! showcase directory">View more</a> 
         </figcaption>
-       </figure> 
+       </figure>
        <figure class="effect span3">
         <img src="/images/homepage/joomla-showcase-3.jpg" alt="Joomla websites"> 
-        <figcaption> 
-         <h3>Discover <span>Magazines</span></h3> 
-         <p>More websites on the Showcase Directory</p> 
+        <figcaption>
+         <h3>action <span>medeor</span></h3>
+         <p>More websites on the Showcase Directory</p>
          <a href="https://showcase.joomla.org" title="Joomla! showcase directory">View more</a> 
         </figcaption>
-       </figure> 
+       </figure>
        <figure class="effect span3">
         <img src="/images/homepage/joomla-showcase-4.jpg" alt="Joomla websites"> 
-        <figcaption> 
-         <h3>Rekor <span>Sanat</span></h3> 
-         <p>More websites on the Showcase Directory</p> 
+        <figcaption>
+         <h3>Soundmit</h3>
+         <p>More websites on the Showcase Directory</p>
          <a href="https://showcase.joomla.org" title="Joomla! showcase directory">View more</a> 
         </figcaption>
-       </figure> 
+       </figure>
       </div>
      </div> 
     </div> 
@@ -683,6 +695,22 @@ var WindowEvent;(function(n){n[n.Load="load"]="Load";n[n.BeforeUnload="beforeunl
         <a href="https://showcase.joomla.org" title="Joomla! Showcase Directory" class="btn btn-danger btn-large">View more examples</a>
        </div> 
       </div>
+     </div> 
+    </div> 
+    <div class="moduletable center newsletter"> 
+     <div class="custom center newsletter"> 
+      <form action="https://community.joomla.org/index.php?option=com_acymailing&amp;ctrl=sub" method="post">
+       <input id="user_name" name="user[name]" placeholder="Your Name" value="" type="text">
+       <input id="user_email" name="user[email]" placeholder="Your Email" value="" type="text"> 
+       <input class="btn btn-large btn-primary" value="Subscribe to our Newsletter" name="Submit" type="submit"> 
+       <input name="acyformname" value="formAcymailing1" type="hidden"> 
+       <input name="ctrl" value="sub" type="hidden"> 
+       <input name="task" value="optin" type="hidden"> 
+       <input name="redirect" value="https://www.joomla.org/newsletter-subscription.html" type="hidden"> 
+       <input name="option" value="com_acymailing" type="hidden"> 
+       <input name="visiblelists" value="" type="hidden"> 
+       <input name="hiddenlists" value="6" type="hidden">
+      </form>
      </div> 
     </div> 
     <div class="row-fluid"> 
